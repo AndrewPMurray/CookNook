@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     answerId: DataTypes.INTEGER
   }, {});
   Comment.associate = function(models) {
-    Comment.belongsTo(model.User, { foreignKey: 'userId' });
-    Comment.belongsTo(model.Answer, { foreignKey: 'answerId' });
-    Comment.hasMany(model.Like, { foreignKey: 'commentId' });
+    Comment.belongsTo(models.User, { foreignKey: 'userId' });
+    Comment.belongsTo(models.Answer, { foreignKey: 'answerId' });
+    Comment.hasMany(models.Like, { foreignKey: 'commentId' });
   };
   return Comment;
 };

@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     questionId: DataTypes.INTEGER
   }, {});
   Like.associate = function(models) {
-    Like.belongsTo(model.User, { foreignKey: 'userId' });
-    Like.belongsTo(model.Answer, { foreignKey: 'answerId' });
-    Like.belongsTo(model.Comment, { foreignKey: 'commentId' });
-    Like.belongsTo(model.Question, { foreignKey: 'questionId' });
+    Like.belongsTo(models.User, { foreignKey: 'userId' });
+    Like.belongsTo(models.Answer, { foreignKey: 'answerId' });
+    Like.belongsTo(models.Comment, { foreignKey: 'commentId' });
+    Like.belongsTo(models.Question, { foreignKey: 'questionId' });
   };
   return Like;
 };

@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const csrf = require('csurf')
 
 const { sessionSecret } = require('./config')
 const { sequelize } = require('./db/models');
@@ -59,6 +58,4 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}...`))
-
-module.exports = {app, csrfProtection};
+module.exports = app;

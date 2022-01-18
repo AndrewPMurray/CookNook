@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     content: DataTypes.TEXT
   }, {});
   Question.associate = function(models) {
-    Question.belongsTo(model.PostType, { foreignKey: 'postTypeId' });
-    Question.belongsTo(model.User, { foreignKey: 'userId' });
-    Question.hasMany(model.Answer, { foreignKey: 'questionId' });
-    Question.hasMany(model.Like, { foreignKey: 'questionId' });
+    Question.belongsTo(models.PostType, { foreignKey: 'postTypeId' });
+    Question.belongsTo(models.User, { foreignKey: 'userId' });
+    Question.hasMany(models.Answer, { foreignKey: 'questionId' });
+    Question.hasMany(models.Like, { foreignKey: 'questionId' });
   };
   return Question;
 };

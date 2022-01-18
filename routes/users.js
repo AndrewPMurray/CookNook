@@ -1,14 +1,17 @@
 var express = require('express');
 var router = express.Router();
-const {csrfProtection, asyncHandler} = require('../utils')
-const User;
+const bcrypt = require('bcryptjs');
+const { check, validationResult } = require('express-validator');
+const { csrfProtection, asyncHandler } = require('../utils')
+const { User } = require('../db/models');
+const db = require('../db/models');
 
 
 
 let errors = [];
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', csrfProtection, function(req, res, next) {
   res.render('sign-up', {errors});
 });
 
@@ -36,5 +39,56 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   errors = [];
   res.redirect('/users')
 })
+
+// User Login
+const loginValidators = [
+  check('emailAddress')
+      .exists({ checkFalsy: true })
+      .withMessage('Please provide an email address.'),
+  check('password')
+      .exists({ checkFalsy: true })
+      .withMessage('Please enter your password.'),
+]
+
+router.get('/login', csrfProtection, (req, res) => {
+  res.render('login', {
+    title: 'Login',
+    csrfToken: req.csrfToken(),
+  })
+});
+
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, res) => {
+  const {
+    emailAddress,
+    password
+  } = req.body
+
+  let errors = [];
+  const validatorErrors = validationResult(req);
+
+  if(validatorErrors.isEmpty()) {
+    const user = await db.User.findOne({ where: { emailAddress } });
+
+    if (user !== null) {
+      const isPassword = await bcrypt.compare(password, user.hashedPassword.toString());
+
+      if(isPassword) {
+        // TODO: set user session
+        return res.redirect('/');
+      }
+    }
+    errors.push('Could not login with provided username and password');
+  } else {
+    errors = validatorErrors.array().map((error) => error.msg);
+  }
+
+  res.render('login', {
+    title: 'Login',
+    errors,
+    emailAddress,
+    csrfToken: req.csrfToken()
+  });
+   
+}));
 
 module.exports = router;
