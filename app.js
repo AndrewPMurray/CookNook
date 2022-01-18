@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const csrf = require('csurf')
 
 const { sessionSecret } = require('./config')
 const { sequelize } = require('./db/models');
@@ -10,6 +11,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const { port } = require('./config')
 
 const app = express();
 
@@ -24,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // set up session middleware
 const store = new SequelizeStore({ db: sequelize });
+
 
 app.use(
   session({
@@ -56,4 +59,6 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+app.listen(port, () => console.log(`Listening on port ${port}...`))
+
+module.exports = {app, csrfProtection};
