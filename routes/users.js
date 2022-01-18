@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const {csrfProtection, asyncHandler} = require('../utils')
+const bcrypt = require('bcrypt')
 const User;
 
 
@@ -27,8 +28,9 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   if (password !== confirmedPassword) errors.push('Passwords do not match')
 
   if (!errors) {
+    const hashedPass = await bcrypt.hash(password, 10)
     const newUser = await User.create({
-      userName, email, password
+      userName, email, hashedPass
     })
     req.session.user = newUser;
     res.redirect('/')
@@ -36,5 +38,6 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   errors = [];
   res.redirect('/users')
 })
+
 
 module.exports = router;
