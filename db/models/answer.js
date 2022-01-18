@@ -6,10 +6,10 @@ module.exports = (sequelize, DataTypes) => {
     questionId: DataTypes.INTEGER
   }, {});
   Answer.associate = function(models) {
-    Answer.belongsTo(model.User, { foreignKey: 'userId' });
-    Answer.belongsTo(model.Question, { foreignKey: 'questionId' });
-    Answer.hasMany(model.Comment, { foreignKey: 'answerId' });
-    Answer.hasMany(model.Like, { foreignKey: 'answerId' });
+    Answer.belongsTo(models.User, { foreignKey: 'userId' });
+    Answer.belongsTo(models.Question, { foreignKey: 'questionId' });
+    Answer.hasMany(models.Comment, { foreignKey: 'answerId' });
+    Answer.hasMany(models.Like, { foreignKey: 'answerId' });
   };
   return Answer;
 };
