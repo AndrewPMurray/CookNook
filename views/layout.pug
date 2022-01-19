@@ -9,19 +9,15 @@ html
       title CookNook - #{title}
       block head
   body
-    nav
-      a(href='/') CookNook
-      .navbar
-        ul
-          li: a(href='/questions') Questions
-        if locals.authenticated
-          span Welcome #{user.username}!
-          form(action='/users/logout' method='post')
-            button(type='submit') Logout
-        else
-          span
-            a(href='/users/login') Login
-            a(href='/users') Register
-    .container
-      h2 #{title}
+    nav#main-nav-bar
+      a(href='/')
+        div#logo-img
+      div#right-nav
+        a(href='/questions')
+          button#add-question Add question
+        a(href='/users')
+          button#nav-signup Sign Up
+        a(href='/landing')
+          button#nav-login Login
+
       block content
