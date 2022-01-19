@@ -38,9 +38,9 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
 
 // User Login
 const loginValidators = [
-  check('emailAddress')
+  check('username')
       .exists({ checkFalsy: true })
-      .withMessage('Please provide an email address.'),
+      .withMessage('Please enter your username.'),
   check('password')
       .exists({ checkFalsy: true })
       .withMessage('Please enter your password.'),
@@ -87,7 +87,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
   res.render('login', {
     title: 'Login',
     errors,
-    emailAddress,
+    username,
     csrfToken: req.csrfToken()
   });
 }));

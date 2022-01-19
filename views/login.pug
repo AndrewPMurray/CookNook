@@ -7,10 +7,10 @@ block content
       each error in errors
         li=error
     
-  form(action="/users" method="post")
+  form(action="/users/login" method="post")
     input(type="hidden" name="_csrf" value=csrfToken)
-    label(for="emailAddress") email
-    input(type="email" name="emailAddress" value=emailAddress)
+    label(for="username") Username
+    input(type="text" name="emailAddress" value=username)
     label(for="password") Password
     input(type="password" name="password")
     input(type="submit" value="Login")
