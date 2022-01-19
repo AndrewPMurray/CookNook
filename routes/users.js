@@ -34,6 +34,9 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
       username, emailAddress, hashedPassword
     })
     req.session.user = newUser;
+    req.session.auth = {
+      userId: newUser.id,
+    };
     res.redirect('/')
   }
   res.redirect('/users')

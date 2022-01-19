@@ -14,7 +14,7 @@ html
         ul
           li: a(href='/questions') Questions
         if locals.authenticated
-          span Welcome #{user.firstName}!
+          span Welcome #{user.username}!
           form(action='/users/logout' method='post')
             button(type='submit') Logout
         else
