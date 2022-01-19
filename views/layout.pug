@@ -18,8 +18,8 @@ html
             button(type='submit') Logout
         else 
           span
-            a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
-            a(class='btn btn-sm btn-dark' href='/users') Register
+            a(href='/users/login') Login
+            a(href='/users') Register
     .container
       h2 #{title}
     block content
