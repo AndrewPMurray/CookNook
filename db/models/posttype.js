@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   PostType.associate = function(models) {
-    PostType.hasMany(model.Question, { foreignKey: 'postTypeId' });
+    PostType.hasMany(models.Question, { foreignKey: 'postTypeId' });
   };
   return PostType;
 };
