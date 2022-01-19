@@ -1,18 +1,18 @@
 extends layout.pug
 
 block content
-      ul
-        each error in errors
-          li=error
-
-      form(action='/users' method='post')
-                input(name='_csrf' type='hidden' value=csrfToken)
-                label User Name:
-                input(type='text' name='username')
-                label email:
-                input(type='email' name='emailAddress')
-                label Password:
-                input(type='text' name='password')
-                label Confirm Password:
-                input(type='text' name='confirmedPassword')
-                button Submit
+  if errors
+    ul
+      each error in errors
+        li=error
+  form(action='/users' method='post')
+    input(name='_csrf' type='hidden' value=csrfToken)
+    label User Name:
+    input(type='text' name='username')
+    label email:
+    input(type='email' name='emailAddress')
+    label Password:
+    input(type='text' name='password')
+    label Confirm Password:
+    input(type='text' name='confirmedPassword')
+    button Submit

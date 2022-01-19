@@ -2,7 +2,24 @@ doctype html
 html
   head
       block head
-        title=title
-        link(rel='stylesheet' href='/stylesheets/reset.css')
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+      link(rel='stylesheet' href='/stylesheets/reset.css')
+      title CookNook - #{title}
   body
+    nav
+      a(href='/') CookNook
+      #navbarNav
+        ul
+          li: a(href='/questions') Questions 
+        if locals.authenticated
+          span Welcome #{user.firstName}!
+          form(action='/users/logout' method='post')
+            button(type='submit') Logout
+        else 
+          span
+            a(class='btn btn-sm btn-dark mr-2' href='/users/login') Login
+            a(class='btn btn-sm btn-dark' href='/users') Register
+    .container
+      h2 #{title}
     block content

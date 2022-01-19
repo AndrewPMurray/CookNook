@@ -7,15 +7,15 @@ const { User } = require('../db/models');
 
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
-  res.render('sign-up', { errors, csrfToken: req.csrfToken() });
+  res.render('sign-up', { csrfToken: req.csrfToken() });
 });
 
 router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   const {username, emailAddress, password, confirmedPassword} = req.body;
 
   const alreadyUser = await User.findOne({
-    where: {emailAddress}
-  })
+    where: { emailAddress }
+  });
 
   if (alreadyUser) errors.push('Email already created');
   if (!username) errors.push('Please provide a Username')
@@ -54,8 +54,9 @@ router.get('/login', csrfProtection, (req, res) => {
 });
 
 router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, res) => {
+  // Deconstruct username and password from req object
   const {
-    emailAddress,
+    username,
     password
   } = req.body
 
@@ -63,21 +64,26 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
   const validatorErrors = validationResult(req);
 
   if(validatorErrors.isEmpty()) {
-    const user = await db.User.findOne({ where: { emailAddress } });
+    const user = await db.User.findOne({ where: { username } });
 
+    // Check user credentials
     if (user !== null) {
       const isPassword = await bcrypt.compare(password, user.hashedPassword.toString());
 
+      // verify correct password and login if correct
       if(isPassword) {
         // TODO: set user session
         return res.redirect('/');
       }
     }
+    // if username invalid, add error to errors array
     errors.push('Could not login with provided username and password');
   } else {
+    // if errors from empty username or password field, map errors to errors array
     errors = validatorErrors.array().map((error) => error.msg);
   }
 
+  // if login invalid, re-render login page w/ email filled in already and show errors
   res.render('login', {
     title: 'Login',
     errors,
