@@ -2,6 +2,7 @@
 #signup-form {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     width: 40vw;
     margin: auto;
@@ -43,4 +44,12 @@
 
   .space {
     margin: 5px;
+  }
+
+  .error-list {
+      
+  }
+
+  .errors {
+
   }

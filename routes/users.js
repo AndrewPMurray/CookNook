@@ -13,7 +13,8 @@ router.get('/', csrfProtection, (req, res, next) => {
   res.render('sign-up', {errors, csrfToken: req.csrfToken()});
 });
 
-router.post('/', csrfProtection, asyncHandler, async(req, res) => {
+router.post('/', csrfProtection, asyncHandler(async(req, res) => {
+  console.log('working')
   const {username, emailAddress, password, confirmedPassword} = req.body;
 
   const alreadyUser = await User.findOne({
@@ -27,7 +28,7 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   if (!confirmedPassword) errors.push('Please confirm Password')
   if (password !== confirmedPassword) errors.push('Passwords do not match')
 
-  if (!errors) {
+  if (!errors.length) {
     const hashedPassword = await bcrypt.hash(password, 10)
     const newUser = await User.create({
       username, emailAddress, hashedPassword
@@ -37,6 +38,7 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   }
   res.redirect('/users')
 })
+)
 
 
 module.exports = router;
