@@ -1,34 +1,36 @@
 var express = require('express');
 var router = express.Router();
 const {csrfProtection, asyncHandler} = require('../utils')
-const User;
+const bcrypt = require('bcrypt')
+const { User } = require('../db/models');
 
 
 
 let errors = [];
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('sign-up', {errors});
+router.get('/', csrfProtection, (req, res, next) => {
+  res.render('sign-up', {errors, csrfToken: req.csrfToken()});
 });
 
 router.post('/', csrfProtection, asyncHandler, async(req, res) => {
-  const {userName, email, password, confirmedPassword} = req.body;
+  const {username, emailAddress, password, confirmedPassword} = req.body;
 
   const alreadyUser = await User.findOne({
-    where: {email}
+    where: {emailAddress}
   })
 
   if (alreadyUser) errors.push('Email already created');
-  if (!userName) errors.push('Please provide a Username')
-  if (!email) errors.push('Please provide an email')
+  if (!username) errors.push('Please provide a Username')
+  if (!emailAddress) errors.push('Please provide an email')
   if (!password) errors.push('Please provide a password')
   if (!confirmedPassword) errors.push('Please confirm Password')
   if (password !== confirmedPassword) errors.push('Passwords do not match')
 
   if (!errors) {
+    const hashedPassword = await bcrypt.hash(password, 10)
     const newUser = await User.create({
-      userName, email, password
+      username, emailAddress, hashedPassword
     })
     req.session.user = newUser;
     res.redirect('/')
@@ -36,5 +38,6 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   errors = [];
   res.redirect('/users')
 })
+
 
 module.exports = router;
