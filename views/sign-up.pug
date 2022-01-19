@@ -1,6 +1,6 @@
-include layout.pug
+extends signup-login-layout.pug
 
-block content
+block head
   body.outer-class
 
       form(action='/users' method='post')#signup-form
