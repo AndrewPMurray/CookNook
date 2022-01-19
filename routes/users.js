@@ -88,7 +88,6 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
     emailAddress,
     csrfToken: req.csrfToken()
   });
-   
 }));
 
 module.exports = router;
