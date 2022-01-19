@@ -41,3 +41,13 @@ Create Sequelize Database
     - to migrate once complete, run the following:
         - npx dotenv sequelize db:migrate
 
+Merging git branches
+    - Only work from branches OTHER THAN main
+    - If you want to merge changes from another branch, you must pull from that branch first:
+        - git checkout <<branch you want to merge>>
+        - git pull
+        - git checkout <<your branch>>
+        - git merge <<branch you want to merge>> (resolve any merge conflicts)
+    - When a change has been reviewed and is ready to be pushed to main, you can submit a pull request
+    - the pull request is ONLY used for merging your branch to main
+    - Once changes are reviewed and approved, main will be updated with the work from your branch

@@ -5,10 +5,6 @@ const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('../utils')
 const { User } = require('../db/models');
 
-
-
-let errors = [];
-
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
   res.render('sign-up', { errors, csrfToken: req.csrfToken() });
