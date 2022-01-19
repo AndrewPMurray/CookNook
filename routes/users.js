@@ -11,6 +11,7 @@ let errors = [];
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
   res.render('sign-up', {errors, csrfToken: req.csrfToken()});
+  errors=[];
 });
 
 router.post('/', csrfProtection, asyncHandler(async(req, res) => {
