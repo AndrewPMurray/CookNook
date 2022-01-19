@@ -11,7 +11,6 @@ let errors = [];
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
   res.render('sign-up', { errors, csrfToken: req.csrfToken() });
-  errors = [];
 });
 
 router.post('/', csrfProtection, asyncHandler(async (req, res) => {
@@ -101,5 +100,11 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
     csrfToken: req.csrfToken()
   })
 }));
+
+// logout user
+router.post('/logout', (req, res) => {
+  delete req.session.auth;
+  res.redirect('/');
+});
 
 module.exports = router;
