@@ -120,10 +120,12 @@ body {
   }
 
   .outer-class {
+    display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("../images/pexels-roman-odintsov-4551832.jpg");
-    background-size: cover
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   #logo-img {
@@ -150,7 +152,7 @@ body {
     color: white;
     border: 1px solid rgba(184, 38, 37, 0.5);
     transition-duration: .5s;
-    font-family: Din-medium
+    font-family: Din-medium;
   }
 
   #signup-button:hover {
@@ -159,6 +161,8 @@ body {
     border: 1px solid rgba(184, 38, 37);
     color: white
   }
+
+
 
   .form-items > a {
     text-decoration: none;
@@ -170,11 +174,61 @@ body {
     margin: 5px;
   }
 
-  .error-list {
-
-  }
-
   .errors {
     color:rgba(184, 38, 37);
     margin-top: 3px;
+  }
+
+  .landing-container {
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 550px;
+    width: 860px;
+    margin-top: 265px;
+    align-items: center;
+    border-radius: 30px;
+  }
+
+  .signup-div {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #placeholder {
+    width: 400px;
+    height: 200px;
+    background-image: url("../images/CookNook-Placeholder.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .login {
+    width: 400px;
+    height: 300px;
+    background-color: transparent;
+  }
+
+  .pseudo-login {
+    width: 400px;
+    height: 300px;
+    display: hidden;
+  }
+
+  .signup-login-div {
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
+  }
+
+  .signup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    margin-top: -27px;
   }

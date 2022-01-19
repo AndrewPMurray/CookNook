@@ -58,7 +58,7 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req, res) 
 
     // if login invalid, re-render login page w/ email filled in already, and show errors
 
-    res.render('/', {
+    res.render('login', {
         title: 'Login',
         errors,
         emailAddress,
