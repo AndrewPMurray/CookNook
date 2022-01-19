@@ -17,7 +17,7 @@ module.exports = {
         {createdAt: new Date(), updatedAt: new Date(), name: 'Fish'},
         {createdAt: new Date(), updatedAt: new Date(), name: 'Shellfish'},
         {createdAt: new Date(), updatedAt: new Date(), name: 'Grilling'},
-        {createdAt: new Date(), updatedAt: new Date(), name: 'Desert'}
+        {createdAt: new Date(), updatedAt: new Date(), name: 'Dessert'}
       ], {});
 
   },
