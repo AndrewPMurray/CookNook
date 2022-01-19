@@ -76,14 +76,14 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
         return res.redirect('/');
       }
     }
-    // if username invalid, add error to errors array
+    // if username invalid, add error to errors array for rendering in html
     errors.push('Could not login with provided username and password');
   } else {
     // if errors from empty username or password field, map errors to errors array
     errors = validatorErrors.array().map((error) => error.msg);
   }
 
-  // if login invalid, re-render login page w/ email filled in already and show errors
+  // if login invalid, re-render login page w/ email filled in already, and show errors
   res.render('login', {
     title: 'Login',
     errors,
