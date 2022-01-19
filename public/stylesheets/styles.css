@@ -1,46 +1,130 @@
+@font-face {
+    font-family: Din-medium;
+    src: url("/public/DIN/DIN\ Medium.ttf")
+}
+
+body {
+    overflow: hidden;
+  }
+
 
 #signup-form {
     display: flex;
+    padding: 10px 20px;
+    background-color: white;
     justify-content: center;
-    height: 100vh;
-    width: 40vw;
+    flex-direction: column;
+    height: 75vh;
+    width: 50vw;
     margin: auto;
+    margin-top: 140px;
     margin-bottom: 100px;
     align-items: center;
-    border: 3px solid red;
+    border-radius: 30px;
   }
 
   .form-items {
     display: flex;
     flex-direction: column;
+    border-left: 1px solid rgba(131, 131, 131, 0.87);
+    padding-left: 20px;
     gap: 3px;
+    width: 300px;
+    font-family: Din-medium
+  }
+
+  ::placeholder {
+      padding-left: 3px;
+      font-family: Din-medium;
+  }
+
+  #buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+  }
+
+  #login-button {
+      align-items: center;
+      justify-content: center;
+      color: #b82525;
+      background-color: white;
+      width: 80px;
+      border-radius: 10px;
+      height: 30px;
+      font-family: sans-serif;
+      border: 1px solid #b82525;
+      transition-duration: .5s;
+      font-family: Din-medium;
+  }
+
+  #login-button:hover {
+      color:white;
+      background-color: #b82525;
+
+  }
+
+  input {
+      border-radius: 5px;
+      border: 1px solid grey;
+      height: 30px;
   }
 
   .outer-class {
     justify-content: center;
     align-items: center;
+    background-image: url("../images/pexels-roman-odintsov-4551832.jpg");
+    background-size: cover
   }
 
-  .submit-button {
-    background-color: #b82525;
+  #logo-img {
+      background-image: url("../images/CookNook\ Logo\ -\ Red.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 380px;
+      height: 100px;
+  }
+
+ #signup-words {
+     color:grey;
+     padding-bottom: 4px;
+     border-bottom: 1px grey solid;
+     font-family: Din-medium;
+ }
+
+  #signup-button {
+    background-color: rgba(184, 38, 37, 0.5);
     border-radius: 10px;
     height: 30px;
+    width: 80px;
     font-family: sans-serif;
     color: white;
-    border: 1px solid #b82525;
+    border: 1px solid rgba(184, 38, 37, 0.5);
     transition-duration: .5s;
+    font-family: Din-medium
   }
 
-  .submit-button:hover {
+  #signup-button:hover {
     color: #b82525;
-    background-color: white;
+    background-color: rgba(184, 38, 37);
+    border: 1px solid rgba(184, 38, 37);
+    color: white
   }
 
   .form-items > a {
     text-decoration: none;
-    margin-top: 10px
+    margin-top: 10px;
+
   }
 
   .space {
     margin: 5px;
+  }
+
+  .error-list {
+
+  }
+
+  .errors {
+
   }

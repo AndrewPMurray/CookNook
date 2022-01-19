@@ -42,6 +42,7 @@ Create Sequelize Database
         - npx dotenv sequelize db:migrate
 
 
+
 GIT COMMANDS
 
 Merging git branches

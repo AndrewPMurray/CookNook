@@ -11,6 +11,7 @@ let errors = [];
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
   res.render('sign-up', {errors, csrfToken: req.csrfToken()});
+  errors=[];
 });
 
 router.post('/', csrfProtection, asyncHandler(async(req, res) => {
@@ -27,7 +28,7 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
   if (!confirmedPassword) errors.push('Please confirm Password')
   if (password !== confirmedPassword) errors.push('Passwords do not match')
 
-  if (!errors) {
+  if (!errors.length) {
     const hashedPassword = await bcrypt.hash(password, 10)
     const newUser = await User.create({
       username, emailAddress, hashedPassword
@@ -87,6 +88,8 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
     // if errors from empty username or password field, map errors to errors array
     errors = validatorErrors.array().map((error) => error.msg);
   }
+})
+)
 
   // if login invalid, re-render login page w/ email filled in already, and show errors
   res.render('login', {

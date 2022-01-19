@@ -1,26 +1,28 @@
 include layout.pug
 
 block content
-  if errors
-    div.outer-class
-        ul
-          each error in errors
-            li=error
+  body.outer-class
 
-  form(action='/users' method='post')#signup-form
-    div.form-items
+      form(action='/users' method='post')#signup-form
+          div#logo-img
+          div.form-items
+            p#signup-words Sign Up
             input(name='_csrf' type='hidden' value=csrfToken)
             label User Name:
-            input(type='text' name='username')
+            input(type='text' name='username' placeholder='Your username')
             div.space
-            label email:
-            input(type='email' name='emailAddress')
+            label Email:
+            input(type='email' name='emailAddress' placeholder='Your email')
             div.space
             label Password:
-            input(type='text' name='password')
+            input(type='password' name='password' placeholder='Your password')
             div.space
             label Confirm Password:
-            input(type='text' name='confirmedPassword')
-            div.space
-            button.submit-button Submit
-            a(href='/users/login') Login if you have an account
+            input(type='password' name='confirmedPassword' placeholder='Your password')
+            div.space#buttons
+              button(type='submit')#signup-button Signup
+              a(href='/users/login')
+                button#login-button Login
+            ul.error-list
+              each error in errors
+                li(class='errors')=error
