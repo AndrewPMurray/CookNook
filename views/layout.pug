@@ -9,7 +9,7 @@ html
   body
     nav
       a(href='/') CookNook
-      #navbarNav
+      .navbar
         ul
           li: a(href='/questions') Questions 
         if locals.authenticated
@@ -22,4 +22,4 @@ html
             a(href='/users') Register
     .container
       h2 #{title}
-    block content
+      block content
