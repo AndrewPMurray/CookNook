@@ -10,15 +10,15 @@ let errors = [];
 
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
-  res.render('sign-up', {errors, csrfToken: req.csrfToken()});
-  errors=[];
+  res.render('sign-up', { errors, csrfToken: req.csrfToken() });
+  errors = [];
 });
 
-router.post('/', csrfProtection, asyncHandler(async(req, res) => {
-  const {username, emailAddress, password, confirmedPassword} = req.body;
+router.post('/', csrfProtection, asyncHandler(async (req, res) => {
+  const { username, emailAddress, password, confirmedPassword } = req.body;
 
   const alreadyUser = await User.findOne({
-    where: {emailAddress}
+    where: { emailAddress }
   })
 
   if (alreadyUser) errors.push('Email already created');
@@ -88,16 +88,15 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
     // if errors from empty username or password field, map errors to errors array
     errors = validatorErrors.array().map((error) => error.msg);
   }
-})
-)
 
   // if login invalid, re-render login page w/ email filled in already, and show errors
+
   res.render('login', {
     title: 'Login',
     errors,
     emailAddress,
     csrfToken: req.csrfToken()
-  });
+  })
 }));
 
 module.exports = router;
