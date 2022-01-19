@@ -7,6 +7,71 @@ body {
     overflow: hidden;
   }
 
+#main-nav-bar {
+  display: flex;
+  border: 1px solid rgba(184, 38, 37);
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+#add-question {
+  border-radius: 30px;
+  width: 90px;
+  height: 50px;
+  border: 1px solid white;
+  background-color: black;
+  color: white
+}
+
+#nav-signup {
+  margin-right: 20px;
+  height: 50px;
+  width: 90px;
+  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(184, 38, 37);
+  color: white
+}
+
+#nav-login {
+  margin-right: 20px;
+  height: 50px;
+  width: 90px;
+  border-radius: 30px;
+  border: 1px solid rgba(184, 38, 37);
+  background-color: white;
+  color: rgb(184, 38, 37)
+}
+
+#right-nav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+#logo-img {
+  background-image: url("/public/images/CookNook\ Logo\ -\ Red.png");
+}
+
+#add-question {
+  margin-right: 60px;
+}
+
+#signup-form {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 50vw;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    align-items: center;
+    border-radius: 30px;
+  }
+
   .form-items {
     display: flex;
     flex-direction: column;

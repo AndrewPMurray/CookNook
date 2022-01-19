@@ -17,7 +17,7 @@ module.exports = {
         {createdAt: new Date(), updatedAt: new Date(), name: 'Fish'},
         {createdAt: new Date(), updatedAt: new Date(), name: 'Shellfish'},
         {createdAt: new Date(), updatedAt: new Date(), name: 'Grilling'},
-        {createdAt: new Date(), updatedAt: new Date(), name: 'Desert'}
+        {createdAt: new Date(), updatedAt: new Date(), name: 'Dessert'}
       ], {});
 
   },
@@ -28,7 +28,7 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
 
       Example: */
-      return queryInterface.bulkDelete('PostType', null, {});
+      return queryInterface.bulkDelete('PostTypes', null, {});
 
   }
 };
