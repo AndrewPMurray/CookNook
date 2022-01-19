@@ -1,29 +1,17 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('../utils')
 const { User } = require('../db/models');
-const db = require('../db/models');
-=======
-const {csrfProtection, asyncHandler} = require('../utils')
-const bcrypt = require('bcrypt')
-const { User } = require('../db/models');
->>>>>>> signup-branch
 
 
 
 let errors = [];
 
 /* GET users listing. */
-<<<<<<< HEAD
-router.get('/', csrfProtection, function(req, res, next) {
-  res.render('sign-up', {errors});
-=======
 router.get('/', csrfProtection, (req, res, next) => {
-  res.render('sign-up', {errors, csrfToken: req.csrfToken()});
->>>>>>> signup-branch
+  res.render('sign-up', { errors, csrfToken: req.csrfToken() });
 });
 
 router.post('/', csrfProtection, asyncHandler, async(req, res) => {
@@ -52,7 +40,6 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
   res.redirect('/users')
 })
 
-<<<<<<< HEAD
 // User Login
 const loginValidators = [
   check('emailAddress')
@@ -102,7 +89,5 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
     csrfToken: req.csrfToken()
   });
 }));
-=======
->>>>>>> signup-branch
 
 module.exports = router;
