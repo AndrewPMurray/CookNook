@@ -2,20 +2,23 @@ var express = require('express');
 var router = express.Router();
 const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
+
 const { csrfProtection, asyncHandler } = require('../utils')
 const { User } = require('../db/models');
 
+let errors = [];
+
 /* GET users listing. */
 router.get('/', csrfProtection, (req, res, next) => {
-  res.render('sign-up', { csrfToken: req.csrfToken() });
+  res.render('sign-up', {errors, csrfToken: req.csrfToken()});
 });
 
-router.post('/', csrfProtection, asyncHandler, async (req, res) => {
-  const { username, emailAddress, password, confirmedPassword } = req.body;
+router.post('/', csrfProtection, asyncHandler(async(req, res) => {
+  const {username, emailAddress, password, confirmedPassword} = req.body;
 
   const alreadyUser = await User.findOne({
-    where: { emailAddress }
-  });
+    where: {emailAddress}
+  })
 
   if (alreadyUser) errors.push('Email already created');
   if (!username) errors.push('Please provide a Username')
@@ -33,13 +36,14 @@ router.post('/', csrfProtection, asyncHandler, async (req, res) => {
     res.redirect('/')
   }
   res.redirect('/users')
-})
+}));
+
 
 // User Login
 const loginValidators = [
-  check('username')
+  check('emailAddress')
     .exists({ checkFalsy: true })
-    .withMessage('Please enter your username.'),
+    .withMessage('Please enter your email address.'),
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please enter your password.'),
@@ -55,7 +59,7 @@ router.get('/login', csrfProtection, (req, res) => {
 router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   // Deconstruct username and password from req object
   const {
-    username,
+    emailAddress,
     password
   } = req.body
 
@@ -63,7 +67,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
   const validatorErrors = validationResult(req);
 
   if (validatorErrors.isEmpty()) {
-    const user = await db.User.findOne({ where: { username } });
+    const user = await User.findOne({ where: { emailAddress } });
 
     // Check user credentials
     if (user !== null) {
@@ -88,7 +92,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
   res.render('login', {
     title: 'Login',
     errors,
-    username,
+    emailAddress,
     csrfToken: req.csrfToken()
   });
 }));
