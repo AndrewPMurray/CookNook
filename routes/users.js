@@ -35,7 +35,6 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
     req.session.user = newUser;
     res.redirect('/')
   }
-  errors = [];
   res.redirect('/users')
 })
 
