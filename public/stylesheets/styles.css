@@ -7,21 +7,6 @@ body {
     overflow: hidden;
   }
 
-
-#signup-form {
-    display: flex;
-    background-color: white;
-    justify-content: center;
-    flex-direction: column;
-    height: 80vh;
-    width: 50vw;
-    margin: auto;
-    margin-top: 120px;
-    margin-bottom: 120px;
-    align-items: center;
-    border-radius: 30px;
-  }
-
   .form-items {
     display: flex;
     flex-direction: column;
@@ -70,10 +55,12 @@ body {
   }
 
   .outer-class {
+    display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("../images/pexels-roman-odintsov-4551832.jpg");
-    background-size: cover
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   #logo-img {
@@ -127,4 +114,48 @@ body {
   .errors {
     color:rgba(184, 38, 37);
     margin-top: 3px;
+  }
+
+  .landing-container {
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 550px;
+    width: 860px;
+    margin-top: 265px;
+    align-items: center;
+    border-radius: 30px;
+  }
+
+  .signup-div {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .placeholder {
+    width: 400px;
+    height: 200px;
+    background-color: black;
+  }
+
+  .login {
+    width: 400px;
+    height: 300px;
+    background-color: transparent;
+  }
+
+  .pseudo-login {
+    width: 400px;
+    height: 300px;
+    display: hidden;
+  }
+
+  .signup-login-div {
+    display: flex;
+    flex-direction: row;
+    align-items: space-around;
   }
