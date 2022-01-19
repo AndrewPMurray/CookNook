@@ -41,6 +41,10 @@ Create Sequelize Database
     - to migrate once complete, run the following:
         - npx dotenv sequelize db:migrate
 
+
+
+GIT COMMANDS
+
 Merging git branches
     - Only work from branches OTHER THAN main
     - If you want to merge changes from another branch, you must pull from that branch first:

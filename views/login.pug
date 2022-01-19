@@ -1,0 +1,20 @@
+extends layout.pug
+
+block head
+  if errors
+    div.outer-class
+      ul
+        each error in errors
+          li=error
+    
+  form(action="/users/login" method="post")#signup-form
+    div.form-items 
+      input(type="hidden" name="_csrf" value=csrfToken)
+      label(for="username") Email Address:
+      input(type="text" name="emailAddress" value=username)
+      div.space
+      label(for="password") Password:
+      input(type="password" name="password")
+      div.space
+      button.submit-button Submit
+      a(href='/users') Click here to sign up for an account
