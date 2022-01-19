@@ -6,20 +6,21 @@ block head
       div#logo-img
       div.signup-login-div
         div.signup
-          div.placeholder
-          button#signup-button
+          div#placeholder
+          div.space
+          a(href="/users"): button#signup-button Sign Up
         div.pseudo-login
           form(action='/landing' method='post')#signup-form
-          div.form-items
-            p#login-words Login
-            input(name='_csrf' type='hidden' value=csrfToken)
-            label Email:
-            input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
-            div.space
-            label Password:
-            input(type='password' name='password' value=password placeholder='Your password')
-            div.space#buttons
-              button(type='submit')#signup-button Login
-            ul.error-list
-              each error in errors
-                li(class='errors')=error
+            div.form-items
+              p#login-words Login
+              input(name='_csrf' type='hidden' value=csrfToken)
+              label Email:
+              input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
+              div.space
+              label Password:
+              input(type='password' name='password' value=password placeholder='Your password')
+              div.space#buttons
+                button(type='submit')#signup-button Login
+              ul.error-list
+                each error in errors
+                  li(class='errors')=error

@@ -87,7 +87,7 @@ body {
     color: white;
     border: 1px solid rgba(184, 38, 37, 0.5);
     transition-duration: .5s;
-    font-family: Din-medium
+    font-family: Din-medium;
   }
 
   #signup-button:hover {
@@ -96,6 +96,8 @@ body {
     border: 1px solid rgba(184, 38, 37);
     color: white
   }
+
+
 
   .form-items > a {
     text-decoration: none;
@@ -136,10 +138,12 @@ body {
     justify-content: space-between;
   }
 
-  .placeholder {
+  #placeholder {
     width: 400px;
     height: 200px;
-    background-color: black;
+    background-image: url("../images/CookNook-Placeholder.png");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .login {
@@ -158,4 +162,12 @@ body {
     display: flex;
     flex-direction: row;
     align-items: space-around;
+  }
+
+  .signup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;
+    margin-top: -27px;
   }
