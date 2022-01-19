@@ -1,18 +1,25 @@
 extends layout.pug
 
 block content
+  div.outer-class
       ul
         each error in errors
           li=error
 
-      form(action='/users' method='post')
+      form(action='/users' method='post')#signup-form
+        div.form-items
                 input(name='_csrf' type='hidden' value=csrfToken)
                 label User Name:
                 input(type='text' name='username')
+                div.space
                 label email:
                 input(type='email' name='emailAddress')
+                div.space
                 label Password:
                 input(type='text' name='password')
+                div.space
                 label Confirm Password:
                 input(type='text' name='confirmedPassword')
-                button Submit
+                div.space
+                button.submit-button Submit
+                a(href='/users/login') Login if you have an account
