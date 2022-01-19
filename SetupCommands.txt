@@ -48,8 +48,7 @@ Merging git branches
         - git pull
         - git checkout <<your branch>>
         - git merge <<branch you want to merge>> (resolve any merge conflicts)
-    - When a change has been reviewed and is ready to be pushed to main, you can submit a pull request
-    - the pull request is ONLY used for merging your branch to main
+    - When a change has been reviewed and is ready to be pushed to main, you can submit a pull request via the github website
     - Once changes are reviewed and approved, main will be updated with the work from your branch
 
 Merging specific files from another branch with your branch in git
