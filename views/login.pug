@@ -1,16 +1,20 @@
 extends layout.pug
 
-block content
+block head
   if errors
-    p The following error(s) occurred:
-    ul
-      each error in errors
-        li=error
+    div.outer-class
+      ul
+        each error in errors
+          li=error
     
-  form(action="/users/login" method="post")
-    input(type="hidden" name="_csrf" value=csrfToken)
-    label(for="username") Username
-    input(type="text" name="emailAddress" value=username)
-    label(for="password") Password
-    input(type="password" name="password")
-    input(type="submit" value="Login")
+  form(action="/users/login" method="post")#signup-form
+    div.form-items 
+      input(type="hidden" name="_csrf" value=csrfToken)
+      label(for="username") Email Address:
+      input(type="text" name="emailAddress" value=username)
+      div.space
+      label(for="password") Password:
+      input(type="password" name="password")
+      div.space
+      button.submit-button Submit
+      a(href='/users') Click here to sign up for an account

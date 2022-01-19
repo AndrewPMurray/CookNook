@@ -1,23 +1,23 @@
 doctype html
 html
   head
-      block head
       meta(charset='utf-8')
       meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
       link(rel='stylesheet' href='/stylesheets/reset.css')
       link(rel='stylesheet' href='/stylesheets/styles.css')
       title CookNook - #{title}
+      block head
   body
     nav
       a(href='/') CookNook
       .navbar
         ul
-          li: a(href='/questions') Questions 
+          li: a(href='/questions') Questions
         if locals.authenticated
           span Welcome #{user.firstName}!
           form(action='/users/logout' method='post')
             button(type='submit') Logout
-        else 
+        else
           span
             a(href='/users/login') Login
             a(href='/users') Register

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const { csrfProtection, asyncHandler } = require('../utils')
 const { User } = require('../db/models');
@@ -10,8 +10,8 @@ router.get('/', csrfProtection, (req, res, next) => {
   res.render('sign-up', { csrfToken: req.csrfToken() });
 });
 
-router.post('/', csrfProtection, asyncHandler, async(req, res) => {
-  const {username, emailAddress, password, confirmedPassword} = req.body;
+router.post('/', csrfProtection, asyncHandler, async (req, res) => {
+  const { username, emailAddress, password, confirmedPassword } = req.body;
 
   const alreadyUser = await User.findOne({
     where: { emailAddress }
@@ -38,11 +38,11 @@ router.post('/', csrfProtection, asyncHandler, async(req, res) => {
 // User Login
 const loginValidators = [
   check('username')
-      .exists({ checkFalsy: true })
-      .withMessage('Please enter your username.'),
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter your username.'),
   check('password')
-      .exists({ checkFalsy: true })
-      .withMessage('Please enter your password.'),
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter your password.'),
 ]
 
 router.get('/login', csrfProtection, (req, res) => {
@@ -52,7 +52,7 @@ router.get('/login', csrfProtection, (req, res) => {
   })
 });
 
-router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, res) => {
+router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
   // Deconstruct username and password from req object
   const {
     username,
@@ -62,7 +62,7 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
   let errors = [];
   const validatorErrors = validationResult(req);
 
-  if(validatorErrors.isEmpty()) {
+  if (validatorErrors.isEmpty()) {
     const user = await db.User.findOne({ where: { username } });
 
     // Check user credentials
@@ -70,8 +70,10 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
       const isPassword = await bcrypt.compare(password, user.hashedPassword.toString());
 
       // verify correct password and login if correct
-      if(isPassword) {
-        // TODO: set user session
+      if (isPassword) {
+        req.session.auth = {
+          userId: user.id,
+        };
         return res.redirect('/');
       }
     }
