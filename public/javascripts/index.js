@@ -1,3 +1,5 @@
+import db from ('../../db/models');
+
 window.addEventListener("DOMContentLoaded", (event) => {
     // truncate text function (if text too long)
     const truncateText = (html) => {
@@ -11,6 +13,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
             });
         };
     }
+    console.log(db);
 
     // truncate answers that are too long
     const answers = document.querySelectorAll('.answer');

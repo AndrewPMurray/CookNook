@@ -15,6 +15,7 @@ const store = new SequelizeStore({ db: sequelize });
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const landingRouter = require('./routes/landing');
+const questionsRouter = require('./routes/questions');
 
 const app = express();
 
@@ -45,6 +46,7 @@ store.sync();
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/landing', landingRouter);
+app.use('/questions', questionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
