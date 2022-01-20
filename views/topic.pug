@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+
+  div#topic-page
+    h1= topic.name
+        each question in questions
+          if question.postTypeId === topic.id
+            .question-box
+              p=question.content
+              each answer in answers
+                if answer.questionId === question.id
+                    .answer-box
+                        p=answer.content

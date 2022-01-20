@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content
+  div.question-form-container
+    div.question-form-container-items
+      div.question-form-header
+        p Add Question
+      div.question-form-tips
+        p Tips on getting good answers quickly
+        ul
+          li Make sure your question has not been asked already
+          li Keep your question short and to the point
+          li Double-check grammar and spelling
+      div.question-form-body
+        form(action="/questions" method="post")
+            input(type="hidden" name="_csrf" value=csrfToken)
+            label(for="title") Ask your question here:
+            input(name="title" placeholder="Start your question with \"What\", \"How\", \"Why\", etc.")
+            label(for="content") To allow others to best answer your question, please provide details for your question below:
+            textarea(name="content")
+            div.space#buttons
+                a(href="/" id="cancel") cancel
+                button(type="submit" id="ask-question-button") Ask Question
+      div.question-form-footer

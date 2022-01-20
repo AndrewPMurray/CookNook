@@ -2,25 +2,20 @@ extends signup-login-layout.pug
 
 block head
   body.outer-class
-    div.landing-container
-      div#logo-img
-      div.signup-login-div
-        div.signup
-          div#placeholder
+      form(action='/landing' method='post')#login-form
+        .error-messages
+          ul.error-list
+            each error in errors
+              li(class='errors')=error
+        div.form-items-login
+          div#logo-img
+          p#login-words Login
+          input(name='_csrf' type='hidden' value=csrfToken)
+          label Email:
+          input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
           div.space
-          a(href="/users"): button#signup-button Sign Up
-        div.pseudo-login
-          form(action='/landing' method='post')#signup-form
-            div.form-items
-              p#login-words Login
-              input(name='_csrf' type='hidden' value=csrfToken)
-              label Email:
-              input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
-              div.space
-              label Password:
-              input(type='password' name='password' value=password placeholder='Your password')
-              div.space#buttons
-                button(type='submit')#signup-button Login
-              ul.error-list
-                each error in errors
-                  li(class='errors')=error
+          label Password:
+          input(type='password' name='password' placeholder='Your password')
+          div.space#buttons
+            button(type='submit').signup-button Login
+            a(href='/users' class='login-button') Dont have an account?
