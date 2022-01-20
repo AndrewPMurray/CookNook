@@ -21,7 +21,7 @@ block head
           input(type='password' name='confirmedPassword' placeholder='Your password')
           div.space#buttons
             button(type='submit')#signup-button Signup
-            a(href='/landing') Login
+            a(href='/landing'): button#login-button Login
           ul.error-list
             each error in errors
               li(class='errors')=error
