@@ -1,9 +1,9 @@
 extends layout
 
 block content
-
-  each question in questions
-    div.question-box
-      h3.question-author= question.User.name
-      h2.question-title= question.title
-      p.question-content= question.content
+  div#question-page
+    each question in questions
+      div.question-box
+        h3.question-author= question.User.name
+        h2.question-title= question.title
+        p.question-content= question.content
