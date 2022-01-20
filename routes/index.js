@@ -4,6 +4,7 @@ const {Question, User, Answer} = require('../db/models')
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
+  console.log(req.session.auth)
   const questions = await Question.findAll({
   include: User
   })
