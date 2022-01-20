@@ -80,7 +80,7 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
     req.session.auth = {
       userId: newUser.id,
     };
-    res.redirect('/')
+    return req.session.save(() => res.redirect('/'))
   } 
   
   const errors = validatorErrors.array().map((error) => error.msg);
