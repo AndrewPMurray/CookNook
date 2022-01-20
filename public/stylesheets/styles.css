@@ -4,15 +4,37 @@
 }
 
 body {
-    overflow: hidden;
+
+  }
+
+  #question-page {
+    background-color: rgb(231, 231, 231);
   }
 
 #main-nav-bar {
+  position: sticky;
+  top: 0;
   display: flex;
-  border: 1px solid rgba(184, 38, 37);
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  background-color: white;
+}
+
+.question-author {
+  font-weight: 700;
+}
+
+.question-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px solid rgb(231, 231, 231);
+  width: 550px;
+  height: 200px;
+  background-color: white;
 }
 
 #add-question {

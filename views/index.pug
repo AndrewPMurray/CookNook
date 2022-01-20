@@ -1,9 +1,15 @@
 extends layout.pug
 
 block content
+
   div#question-page
     each question in questions
       div.question-box
         h3.question-author= question.User.username
         h2.question-title= question.name
         p.question-content= question.content
+        each answer in answers
+          if answer.questionId === question.id
+            .answer-box
+              p=answer.content
+              
