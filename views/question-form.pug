@@ -18,6 +18,10 @@ block content
             input(name="title" placeholder="Start your question with \"What\", \"How\", \"Why\", etc.")
             label(for="content") To allow others to best answer your question, please provide details for your question below:
             textarea(name="content")
+            label(for="postTypeId") Select Topic for this Question
+            select(name="postTypeId")
+              each postType in postTypes 
+                option(value=postType.id)= postType.name
             div.space#buttons
                 a(href="/" id="cancel") cancel
                 button(type="submit" id="ask-question-button") Ask Question

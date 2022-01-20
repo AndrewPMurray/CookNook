@@ -7,8 +7,11 @@ const { csrfProtection, asyncHandler } = require('../utils')
 const db = require('../db/models');
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
+    const postTypes = await db.PostType.findAll()
     res.render('question-form', {
-        csrfToken: req.csrfToken()
+        title: "Ask a Question",
+        csrfToken: req.csrfToken(),
+        postTypes,
     });
 }));
 
