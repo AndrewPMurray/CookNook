@@ -7,10 +7,8 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
     const {questionId, content} = req.body;
-
-    if (req.session.auth) {
-        const userId = req.session.auth
-    } else {
+    const userId = req.session.auth
+    if (!req.session.auth) {
         res.redirect('/')
     }
     const newAnswer = await Answer.create({
