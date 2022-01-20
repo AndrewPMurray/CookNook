@@ -44,7 +44,7 @@ const userValidators = [
       }),
   check('confirmedPassword')
       .exists({ checkFalsy: true })
-      .withMessage('Please provide a value for Confirm Password')
+      .withMessage('Please confirm your password')
       .isLength({ max: 50 })
       .withMessage('Confirm Password must not be more than 50 characters long')
       .custom((value, { req }) => {
