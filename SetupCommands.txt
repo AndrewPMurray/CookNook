@@ -1,0 +1,62 @@
+Download Skeleton or create files
+
+Create Repo (navigate to folder to be used as repo root):
+    git init
+    git add .
+    git commit -m "initial commit"
+    git branch -M main
+    git remote add origin <<INSERT LINK TO GIT REPO>>
+    git push -u origin Main
+
+Install packages using npm (npm install)
+    Some packages need to be specific versions as follows:
+        - pg: 8.6.0
+        - sequelize: 5.x.x
+
+To generate and set session secret:
+    - npm install uuid
+    - run node and type the following commands:
+        - const { v4:uuidv4 } = require('uuid');
+        - uuidv4();
+    - put the output of uuidv4 into the .env (as SESSION_SECRET)
+    - update config/index.js to include sessionSecret
+    - update app.js to import sessionSecret:
+        - const { sessionSecret } = require('./config')
+    - in app.use(session) include the following:
+        - secret: sessionSecret
+
+Create Sequelize Database
+    - Verify .env has proper db parameters:
+        - DB_USERNAME=cook_nook_app
+        - DB_PASSWORD=password
+        - DB_DATABASE=cook_nook
+        - DB_HOST=localhost
+        - SESSION_SECRET=<<sessionSecret>>
+    - Create a user in psql (CREATE USER <<username>> WITH PASSWORD <<password>> CREATEDB;)
+    - To create the database, run the following (outside of psql):
+        - npx dotenv sequelize-cli db:create
+    - Create as many models as you need, for example:
+        - npx sequelize-cli model:generate --name User --attributes username:string,emailAddress:string,hashedPassword:string
+    - Update your models and migrations to reflect nullability, unique fields, type, and foreign key references
+    - to migrate once complete, run the following:
+        - npx dotenv sequelize db:migrate
+
+
+
+GIT COMMANDS
+
+Merging git branches
+    - Only work from branches OTHER THAN main
+    - If you want to merge changes from another branch, you must pull from that branch first:
+        - git checkout <<branch you want to merge>>
+        - git pull
+        - git checkout <<your branch>>
+        - git merge <<branch you want to merge>> (resolve any merge conflicts)
+    - When a change has been reviewed and is ready to be pushed to main, you can submit a pull request via the github website
+    - Once changes are reviewed and approved, main will be updated with the work from your branch
+
+Merging specific files from another branch with your branch in git
+    - git checkout <<branch you want file(s) from>> <<file(s) you want in your branch>>
+    - git branch (to confirm you are still on your branch)
+    - git commit -m <<message>>
+    - git push

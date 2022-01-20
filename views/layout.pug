@@ -1,9 +1,22 @@
 doctype html
 html
   head
+      meta(charset='utf-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+      link(rel='stylesheet' href='/stylesheets/reset.css')
+      link(rel='stylesheet' href='/stylesheets/styles.css')
+      script(type='module' src='/javascripts/index.js')
+      title CookNook - #{title}
       block head
-        title="Express Starter App"
-        link(rel='stylesheet' href='/stylesheets/reset.css')
-        link(rel='stylesheet' href='/stylesheets/styles.css')
   body
-    block content
+    nav#main-nav-bar
+      a(href='/')
+        div#logo-img
+      div#right-nav
+        a(href='/questions')
+          button#add-question Add question
+        a(href='/users')
+          button#nav-signup Sign Up
+        a(href='/landing')
+          button#nav-login Login
+      block content

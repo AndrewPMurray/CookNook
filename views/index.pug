@@ -1,11 +1,9 @@
 extends layout
 
-append head
-  //- add page specific styles by appending to the head
-  link(rel="stylesheet" href="/stylesheets/index.css")
-  //- add page specific js
-  script(src="/javascripts/index.js" type="module" defer)
-
 block content
-  h1= title
-  p Welcome to your Project Skeleton
+
+  each question in questions
+    div.question-box
+      h3.question-author= question.User.name
+      h2.question-title= question.title
+      p.question-content= question.content
