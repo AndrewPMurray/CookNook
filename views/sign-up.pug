@@ -9,10 +9,10 @@ block head
           p#signup-words Sign Up
           input(name='_csrf' type='hidden' value=csrfToken)
           label User Name:
-          input(type='text' name='username' placeholder='Your username')
+          input(type='text' name='username' value=username placeholder='Your username')
           div.space
           label Email:
-          input(type='email' name='emailAddress' placeholder='Your email')
+          input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
           div.space
           label Password:
           input(type='password' name='password' placeholder='Your password')

@@ -88,68 +88,10 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
 
   res.render('sign-up', {
     errors,
+    username,
+    emailAddress,
     csrfToken: req.csrfToken()
   });
-}));
-
-
-// User Login
-const loginValidators = [
-  check('emailAddress')
-    .exists({ checkFalsy: true })
-    .withMessage('Please enter your email address.'),
-  check('password')
-    .exists({ checkFalsy: true })
-    .withMessage('Please enter your password.'),
-]
-
-router.get('/login', csrfProtection, (req, res) => {
-  res.render('login', {
-    title: 'Login',
-    csrfToken: req.csrfToken(),
-  })
-});
-
-router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
-  // Deconstruct username and password from req object
-  const {
-    emailAddress,
-    password
-  } = req.body
-
-  let errors = [];
-  const validatorErrors = validationResult(req);
-
-  if (validatorErrors.isEmpty()) {
-    const user = await User.findOne({ where: { emailAddress } });
-
-    // Check user credentials
-    if (user !== null) {
-      const isPassword = await bcrypt.compare(password, user.hashedPassword.toString());
-
-      // verify correct password and login if correct
-      if (isPassword) {
-        req.session.auth = {
-          userId: user.id,
-        };
-        return res.redirect('/');
-      }
-    }
-    // if username invalid, add error to errors array for rendering in html
-    errors.push('Could not login with provided username and password');
-  } else {
-    // if errors from empty username or password field, map errors to errors array
-    errors = validatorErrors.array().map((error) => error.msg);
-  }
-
-  // if login invalid, re-render login page w/ email filled in already, and show errors
-
-  res.render('login', {
-    title: 'Login',
-    errors,
-    emailAddress,
-    csrfToken: req.csrfToken()
-  })
 }));
 
 // logout user
