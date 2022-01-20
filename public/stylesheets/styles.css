@@ -78,18 +78,6 @@
   margin-right: 60px;
 }
 
-.form-items {
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid rgba(131, 131, 131, 0.87);
-  padding-left: 20px;
-  gap: 3px;
-  width: 300px;
-  font-family: Din-medium;
-  margin-top: 10px;
-  width: 500px;
-}
-
 ::placeholder {
     padding-left: 3px;
     font-family: Din-medium;
@@ -171,12 +159,21 @@ input {
   color: white;
 }
 
-
+.form-items {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(131, 131, 131, 0.87);
+  padding-left: 20px;
+  gap: 3px;
+  width: 300px;
+  font-family: Din-medium;
+  margin-top: 10px;
+  width: auto;
+}
 
 .form-items > a {
   text-decoration: none;
   margin-top: 10px;
-
 }
 
 .space {
