@@ -9,6 +9,6 @@ router.get('/', async (req, res, next) => {
   })
   const answers = await Answer.findAll()
   res.render('index', {questions, answers});
-});
+}); //f
 
 module.exports = router;
