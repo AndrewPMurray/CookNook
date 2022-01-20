@@ -106,15 +106,12 @@
     font-family: Din-medium;
 }
 
-#login-button {
-  border: 1px solid rgb(184, 38, 37);
+.login-button {
   display: flex;
   align-items: center;
   height: 30px;
   justify-content: center;
-  width: 80px;
-  text-decoration: none;
-  border-radius: 10px;
+  width: 280px;
   color: rgba(184, 38, 37)
 }
 
@@ -122,14 +119,6 @@
     display: flex;
     gap: 10px;
     justify-content: flex-end;
-}
-
-
-
-#login-button:hover {
-    color:white;
-    background-color: #b82525;
-
 }
 
 input {
@@ -156,6 +145,24 @@ input {
     height: 100px;
 }
 
+#login-words {
+  color:grey;
+  padding-bottom: 4px;
+  border-bottom: 1px grey solid;
+  font-family: Din-medium;
+}
+
+#login-form {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  width: 800px;
+  height: 500px;
+  padding: 20px 30px;
+  border-radius: 40px;
+  margin-top: 100px;
+}
+
 #signup-words {
     color:grey;
     padding-bottom: 4px;
@@ -163,7 +170,7 @@ input {
     font-family: Din-medium;
 }
 
-#signup-button {
+.signup-button {
   background-color: rgba(184, 38, 37, 0.5);
   border-radius: 10px;
   height: 30px;
@@ -175,7 +182,7 @@ input {
   font-family: Din-medium;
 }
 
-#signup-button:hover {
+.signup-button:hover {
   color: #b82525;
   background-color: rgba(184, 38, 37);
   border: 1px solid rgba(184, 38, 37);
@@ -187,6 +194,19 @@ input {
   flex-direction: column;
   border-left: 1px solid rgba(131, 131, 131, 0.87);
   padding-left: 20px;
+  gap: 3px;
+  width: 300px;
+  font-family: Din-medium;
+  margin-top: 10px;
+  width: auto;
+}
+
+.form-items-login {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(131, 131, 131, 0.87);
+  padding-left: 20px;
+  justify-content: center;
   gap: 3px;
   width: 300px;
   font-family: Din-medium;
@@ -224,6 +244,7 @@ input {
   width: 150px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -233,6 +254,7 @@ input {
   background-color: white;
   width: 800px;
   height: 500px;
+  padding: 20px 30px;
   border-radius: 40px;
   margin-top: 100px;
 }
