@@ -137,4 +137,6 @@ body {
   letter-spacing: 1px;
   color: white;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
 }

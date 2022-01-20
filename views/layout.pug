@@ -20,5 +20,6 @@ html
         div#searchbar
           div#search-icon
           input(id="search-input" type="search" onkeyup="searchBar()" placeholder="Search CookNook")
-        a(href='/landing' id="logout") Logout
+        form(action="/users/logout" method="post")
+          button(href="" type='submit' id="logout") Logout
   block content
