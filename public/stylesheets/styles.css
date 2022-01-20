@@ -3,9 +3,7 @@
     src: url("/public/DIN/DIN\ Medium.ttf");
 }
 
-body {
 
-  }
 
   #question-page {
     background-color: rgb(231, 231, 231);
@@ -88,11 +86,25 @@ body {
   gap: 3px;
   width: 300px;
   font-family: Din-medium;
+  margin-top: 10px;
+  width: 500px;
 }
 
 ::placeholder {
     padding-left: 3px;
     font-family: Din-medium;
+}
+
+#login-button {
+  border: 1px solid rgb(184, 38, 37);
+  display: flex;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
+  width: 80px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgba(184, 38, 37)
 }
 
 #buttons {
@@ -101,19 +113,7 @@ body {
     justify-content: flex-end;
 }
 
-#login-button {
-    align-items: center;
-    justify-content: center;
-    color: #b82525;
-    background-color: white;
-    width: 80px;
-    border-radius: 10px;
-    height: 30px;
-    font-family: sans-serif;
-    border: 1px solid #b82525;
-    transition-duration: .5s;
-    font-family: Din-medium;
-}
+
 
 #login-button:hover {
     color:white;
@@ -134,6 +134,7 @@ input {
   background-image: url("../images/pexels-roman-odintsov-4551832.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #logo-img {
@@ -197,6 +198,23 @@ input {
   margin-top: 265px;
   align-items: center;
   border-radius: 30px;
+}
+
+.error-messages {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#signup-form {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  width: 800px;
+  height: 500px;
+  border-radius: 40px;
+  margin-top: 100px;
 }
 
 .signup-div {

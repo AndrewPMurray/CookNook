@@ -2,10 +2,13 @@ extends signup-login-layout.pug
 
 block head
   body.outer-class
-    div.landing-container
-      div#logo-img
       form(action='/users' method='post')#signup-form
+        .error-messages
+          ul.error-list
+            each error in errors
+              li(class='errors')=error
         div.form-items
+          div#logo-img
           p#signup-words Sign Up
           input(name='_csrf' type='hidden' value=csrfToken)
           label User Name:
@@ -21,7 +24,4 @@ block head
           input(type='password' name='confirmedPassword' placeholder='Your password')
           div.space#buttons
             button(type='submit')#signup-button Signup
-            a(href='/landing'): button#login-button Login
-          ul.error-list
-            each error in errors
-              li(class='errors')=error
+            a(href='/landing' id='login-button') Login
