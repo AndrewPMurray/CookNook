@@ -1,5 +1,3 @@
-import db from ('../../db/models');
-
 window.addEventListener("DOMContentLoaded", (event) => {
     // truncate text function (if text too long)
     const truncateText = (html) => {
@@ -13,7 +11,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
             });
         };
     }
-    console.log(db);
 
     // truncate answers that are too long
     const answers = document.querySelectorAll('.answer');
@@ -50,6 +47,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 </div>
                 <div class="question-form-body">
                     <form action="/questions" method="post">
+                        <input type="hidden" name="postTypeId" value="1">
                         <label for="title">Ask your question here:</label>
                         <input name="title" placeholder="Start your question with &quot;What&quot;, &quot;How&quot;, &quot;Why&quot;, etc."></input>
                         <label for="content">To allow others to best answer your question, please provide details for your question below:</label>
