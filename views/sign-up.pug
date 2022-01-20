@@ -2,27 +2,26 @@ extends signup-login-layout.pug
 
 block head
   body.outer-class
-
+    div.landing-container
+      div#logo-img
       form(action='/users' method='post')#signup-form
-          div#logo-img
-          div.form-items
-            p#signup-words Sign Up
-            input(name='_csrf' type='hidden' value=csrfToken)
-            label User Name:
-            input(type='text' name='username' placeholder='Your username')
-            div.space
-            label Email:
-            input(type='email' name='emailAddress' placeholder='Your email')
-            div.space
-            label Password:
-            input(type='password' name='password' placeholder='Your password')
-            div.space
-            label Confirm Password:
-            input(type='password' name='confirmedPassword' placeholder='Your password')
-            div.space#buttons
-              button(type='submit')#signup-button Signup
-              a(href='/users/login')
-                button#login-button Login
-            ul.error-list
-              each error in errors
-                li(class='errors')=error
+        div.form-items
+          p#signup-words Sign Up
+          input(name='_csrf' type='hidden' value=csrfToken)
+          label User Name:
+          input(type='text' name='username' value=username placeholder='Your username')
+          div.space
+          label Email:
+          input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
+          div.space
+          label Password:
+          input(type='password' name='password' placeholder='Your password')
+          div.space
+          label Confirm Password:
+          input(type='password' name='confirmedPassword' placeholder='Your password')
+          div.space#buttons
+            button(type='submit')#signup-button Signup
+            a(href='/landing'): button#login-button Login
+          ul.error-list
+            each error in errors
+              li(class='errors')=error
