@@ -7,15 +7,8 @@ router.get('/', async (req, res, next) => {
   const questions = await Question.findAll({
   include: User
   })
-  questions.forEach(question => {
-    const questionId = question.id
-  })
-  const answers = await Answer.findAll({
-    where: {
-
-    }
-  })
-  res.render('index', {questions});
+  const answers = await Answer.findAll()
+  res.render('index', {questions, answers});
 });
 
 module.exports = router;
