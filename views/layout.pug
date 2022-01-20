@@ -13,12 +13,12 @@ html
   body
     nav#nav
       div#nav-div
-        a(href='/')
-          div#logo
+        a(href='/' id="logo")
         a(href='/questions' id="questions") Questions
         a(href='/topics' id="topics") Topics
         div#searchbar
           div#search-icon
-          input(id="search-input" type="search" onkeyup="searchBar()" placeholder="Search CookNook")
-        a(href='/landing' id="logout") Logout
+          form#form
+            input(id="search-input" type="search" spellcheck="on" autocorrect="off" incremental onkeyup="searchBar()" placeholder="Search CookNook" name="q" minlength="3" maxlength="255")
+        a(href='/users/logout' id="logout") Logout
   block content
