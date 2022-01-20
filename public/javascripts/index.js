@@ -1,3 +1,5 @@
+const {Question} = require("/db/models")
+
 window.addEventListener("DOMContentLoaded", (event) => {
     // truncate text function (if text too long)
     const truncateText = (html) => {
@@ -19,5 +21,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // add'l scripts as needed
-
+    
 });
