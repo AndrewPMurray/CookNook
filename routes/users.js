@@ -42,7 +42,7 @@ const userValidators = [
           }
           return true;
       }),
-  check('confirmPassword')
+  check('confirmedPassword')
       .exists({ checkFalsy: true })
       .withMessage('Please provide a value for Confirm Password')
       .isLength({ max: 50 })
@@ -64,11 +64,7 @@ router.get('/', csrfProtection, (req, res, next) => {
 });
 
 router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) => {
-  const { username, emailAddress, password, confirmedPassword } = req.body;
-
-  const alreadyUser = await User.findOne({
-    where: { emailAddress }
-  })
+  const { username, emailAddress, password } = req.body;
 
   const validatorErrors = validationResult(req);
 
