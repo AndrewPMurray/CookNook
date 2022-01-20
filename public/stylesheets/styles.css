@@ -76,6 +76,7 @@ body {
 #buttons {
     display: flex;
     gap: 10px;
+    align-items: center;
     justify-content: flex-end;
 }
 
@@ -258,11 +259,13 @@ input {
   color:rgba(184, 38, 37);
 }
 
-textarea {
+.question-form-body > form > textarea {
+  margin: 10px;
   resize: none;
-  width: 100%;
+  width: auto;
   height: 18em;
   border: none;
+  background-color: rgb(250, 250, 250);
 }
 
 .question-form-header {
@@ -282,10 +285,17 @@ textarea {
   padding: 10px;
 }
 
+.question-form-body > form > input {
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  border-radius: 0px;
+}
+
 #ask-question-button {
   background-color: rgba(184, 38, 37);
-  border-radius: 10px;
-  height: 20px;
+  border-radius: 40px;
+  height: 40px;
   width: 100px;
   font-family: sans-serif;
   color: white;
@@ -296,22 +306,19 @@ textarea {
 }
 
 #cancel:hover {
-  color: #b82525;
-  background-color: rgba(184, 38, 37);
-  border: 1px solid rgba(184, 38, 37);
-  color: white;
+  text-decoration: underline;
 }
 
 #cancel {
-  background-color: rgba(184, 38, 37, 0.5);
+  background-color: transparent;
   border-radius: 10px;
-  height: 20px;
+  height: 40px;
   width: 75px;
   font-family: sans-serif;
-  color: white;
-  border: 1px solid rgba(184, 38, 37, 0.5);
+  color: gray;
   transition-duration: .5s;
   font-family: Din-medium;
   text-decoration: none;
   text-align: center;
+  line-height: 35px;
 }

@@ -52,8 +52,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
                         <label for="content">To allow others to best answer your question, please provide details for your question below:</label>
                         <textarea name="content"></textarea>
                         <div class="space" id="buttons">
-                            <button type="submit" id="ask-question-button">Ask Question</button>
                             <a href="" id="cancel">cancel</a>
+                            <button type="submit" id="ask-question-button">Ask Question</button>
                         </div>
                     </form>
                 </div>
