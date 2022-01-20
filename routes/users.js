@@ -70,9 +70,12 @@ router.post('/', csrfProtection, userValidators, asyncHandler(async (req, res) =
 
   if (validatorErrors.isEmpty()) {
     const hashedPassword = await bcrypt.hash(password, 10)
-    const newUser = await User.create({
+    await User.create({
       username, emailAddress, hashedPassword
     })
+
+    const newUser = await User.findOne({ where: { emailAddress } })
+    
     req.session.user = newUser;
     req.session.auth = {
       userId: newUser.id,
