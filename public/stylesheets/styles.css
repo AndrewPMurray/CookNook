@@ -315,10 +315,17 @@ input {
   z-index:1000;
 }
 
+.question-form-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .question-form-container-items {
   display: flex;
   flex-direction: column;
-  width: 750px;
+  width: 1000px;
   background-color: white;
   border-radius: 15px;
 }
