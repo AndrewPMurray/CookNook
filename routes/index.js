@@ -6,7 +6,7 @@ const {Question, User, Answer} = require('../db/models')
 router.get('/', async (req, res, next) => {
 
   if (!req.session.auth) {
-    res.redirect('/landing');
+    return res.redirect('/landing');
   }
   const questions = await Question.findAll({
   include: User,

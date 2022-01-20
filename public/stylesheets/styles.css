@@ -310,19 +310,6 @@ input {
   margin-top: -27px;
 }
 
-.overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
-  z-index:1000;
-}
-
 .question-form-container {
   display: block;
   margin-left: auto;
