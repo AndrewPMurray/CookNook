@@ -18,7 +18,7 @@ html
         a(href='/topics' id="topics") Topics
         div#searchbar
           div#search-icon
-          form#form
+          form(id="form" action="/search" method="post")
             input(id="search-input" type="search" spellcheck="on" autocorrect="off" incremental onkeyup="searchBar()" placeholder="Search CookNook" name="q" minlength="3" maxlength="255")
         form(action="/users/logout" method="post")
           button(href="" type='submit' id="logout") Logout

@@ -54,6 +54,9 @@ body {
 }
 
 #form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: 3vh;
   width: 13vw;
 }
@@ -65,7 +68,7 @@ body {
   align-items: center;
   background-color:rgb(184, 38, 37);
   border: 0.25px solid white;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   height: 3vh;
   width: 15vw;
 }
