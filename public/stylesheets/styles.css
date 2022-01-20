@@ -21,7 +21,7 @@ body {
   height: 50px;
   border: 1px solid white;
   background-color: black;
-  color: white
+  color: white;
 }
 
 #nav-signup {
@@ -31,7 +31,7 @@ body {
   border-radius: 30px;
   border: 1px solid white;
   background-color: rgba(184, 38, 37);
-  color: white
+  color: white;
 }
 
 #nav-login {
@@ -41,7 +41,7 @@ body {
   border-radius: 30px;
   border: 1px solid rgba(184, 38, 37);
   background-color: white;
-  color: rgb(184, 38, 37)
+  color: rgb(184, 38, 37);
 }
 
 #right-nav {
@@ -65,7 +65,7 @@ body {
   padding-left: 20px;
   gap: 3px;
   width: 300px;
-  font-family: Din-medium
+  font-family: Din-medium;
 }
 
 ::placeholder {
@@ -145,7 +145,7 @@ input {
   color: #b82525;
   background-color: rgba(184, 38, 37);
   border: 1px solid rgba(184, 38, 37);
-  color: white
+  color: white;
 }
 
 
