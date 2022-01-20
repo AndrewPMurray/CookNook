@@ -1,16 +1,21 @@
-window.addEventListener("DOMContentLoaded", (event)=> {
-    // expand answers
-    const answers = document.querySelectorAll('.answer');
-    answers.forEach((answer) => {
-        if (answer.innerText.length > 300) {
-            const fullText = answer.innerText;
-            answer.innerHTML = `${fullText.slice(0, 300)} ... <a href="" class="expand">[expand]</a>`;
+window.addEventListener("DOMContentLoaded", (event) => {
+    // truncate text function (if text too long)
+    const truncateText = (html) => {
+        if (html.innerText.length > 300) {
+            const fullText = html.innerText;
+            html.innerHTML = `${fullText.slice(0, 300)} ... <a href="" class="expand">[expand]</a>`;
 
-            answer.querySelector('.expand').addEventListener('click', (e) => {
+            html.querySelector('.expand').addEventListener('click', (e) => {
                 e.preventDefault();
-                answer.innerText = fullText;
+                html.innerText = fullText;
             });
         };
+    }
+
+    // truncate answers that are too long
+    const answers = document.querySelectorAll('.answer');
+    answers.forEach((answer) => {
+        truncateText(answer);
     });
 
     // add'l scripts as needed
