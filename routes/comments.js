@@ -5,16 +5,22 @@ const {Answer} = require("../db/models")
 const router = express.Router()
 
 
+
 router.post('/', async (req, res) => {
-    const {questionId, content} = req.body;
-    const userId = req.session.auth
+    const {questionId, comment} = req.body;
+
+    if (!req.session.auth){
+        res.redirect('/landing')
+        return;
+    }
+    const { userId } = req.session.auth
     if (!req.session.auth) {
-        res.redirect('/')
+        res.redirect('/landing')
     }
     const newAnswer = await Answer.create({
-        content, userId, questionId
+        content: comment, userId, questionId
     })
-    res.redirect('/')
+
 })
 
 
