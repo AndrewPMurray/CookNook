@@ -19,6 +19,29 @@
   background-color: white;
 }
 
+.add-comment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.comment-button {
+  border: 1px solid rgb(184, 38, 37);
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  width: 80px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgba(184, 38, 37);
+  background-color: white;
+}
+
+.comment-value {
+  border-radius: 15px;
+}
+
 .question-author {
   font-weight: 700;
 }
@@ -31,7 +54,7 @@
   margin-bottom: 10px;
   border: 1px solid rgb(231, 231, 231);
   width: 550px;
-  height: 200px;
+  height: auto;
   background-color: white;
 }
 
