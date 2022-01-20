@@ -5,13 +5,18 @@
 
 #greeting {
 position: absolute;
-
-margin-left: 5px
+margin-left: 5px;
+z-index: 0;
 }
 
 .answer-box {
   border-top: 1px solid grey;
   width: 100%;
+  padding: 0 10px
+}
+
+#nav {
+  z-index: 2;
 }
 
 body {
@@ -21,6 +26,10 @@ body {
   #question-page {
     background-color: rgb(231, 231, 231);
   }
+
+.question-content {
+  padding: 0 10px;
+}
 
 #main-nav-bar {
   position: sticky;
@@ -62,6 +71,7 @@ body {
 .question-box {
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
   align-items: center;
   margin: auto;
   margin-bottom: 10px;
@@ -69,6 +79,7 @@ body {
   width: 550px;
   height: auto;
   background-color: white;
+  padding: 10px 10px
 }
 
 #add-question {
