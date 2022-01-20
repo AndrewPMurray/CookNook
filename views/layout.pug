@@ -4,23 +4,21 @@ html
       meta(charset='utf-8')
       meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
       link(rel='stylesheet' href='/stylesheets/reset.css')
+      link(rel='stylesheet' href='/stylesheets/nav-styles.css')
       link(rel='stylesheet' href='/stylesheets/styles.css')
+      link(rel="stylesheet" href='https://use.typekit.net/jff8xhs.css')
       script(type='module' src='/javascripts/index.js')
       title CookNook - #{title}
       block head
   body
-    nav#main-nav-bar
-      a(href='/')
-        div#logo-img
-      div#right-nav
-        if locals.authenticated
-          a(href='/questions')
-            button#add-question Add question
-          form(action="/users/logout" method="post")
-            button#nav-login(type="submit") Logout
-        else
-          a(href='/users')
-            button#nav-signup Sign Up
-          a(href='/landing')
-            button#nav-login Login
-      block content
+    nav#nav
+      div#nav-div
+        div#logo
+          a(href='/')
+        a(href='/questions' id="questions") Questions
+        a(href='/topics' id="topics") Topics
+        div#searchbar
+          div#search-icon
+          input(id="search-input" type="search" onkeyup="searchBar()" placeholder="Search CookNook")
+        a(href='/landing' id="logout") Logout
+  block content

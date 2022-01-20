@@ -1,5 +1,7 @@
 'use strict';
 
+const { DATE } = require("sequelize");
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -10,6 +12,8 @@ module.exports = {
       */
    return queryInterface.bulkInsert('Questions', [
     {
+    createdAt: new Date(),
+    updatedAt: new Date(),
     name: "Cooking Chicken",
     postTypeId: 4,
     userId: 5,
@@ -18,6 +22,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+    createdAt: new Date(),
+    updatedAt: new Date(),
     name: "New to Tofu",
     postTypeId: 2,
     userId: 3,
@@ -26,6 +32,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+    createdAt: new Date(),
+    updatedAt: new Date(),
     name: "Best way to cook shrimp",
     postTypeId: 8,
     userId: 6,
@@ -34,6 +42,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "I really hate cookies",
     postTypeId: 10,
     userId: 1,
@@ -41,6 +51,8 @@ module.exports = {
     createdAt: new Date(),
     updatedAt: new Date() },
     {
+    createdAt: new Date(),
+    updatedAt: new Date(),
     name: "Break up dessert",
     postTypeId: 10,
     userId: 8,
@@ -49,6 +61,8 @@ module.exports = {
     updatedAt: new Date() },
 
       {
+    createdAt: new Date(),
+    updatedAt: new Date(),
     name: "Best revenge beef",
     postTypeId: 5,
     userId: 2,
@@ -57,6 +71,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+    createdAt: new Date(),
+    updatedAt: new Date(),
     name: "Best chicken reciepe to get my parents back together",
     postTypeId: 4,
     userId: 4,
@@ -65,6 +81,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "Best ways to grill",
     postTypeId: 9,
     userId: 1,
@@ -73,6 +91,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "Al dente??",
     postTypeId: 3,
     userId: 7,
@@ -81,6 +101,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "Doctors orders",
     postTypeId: 1,
     userId: 8,
@@ -89,6 +111,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "Is this pork bad?",
     postTypeId: 6,
     userId: 5,
@@ -97,6 +121,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "best dessert Ive had",
     postTypeId: 10,
     userId: 3,
@@ -104,6 +130,8 @@ module.exports = {
     createdAt: new Date(),
     updatedAt: new Date() },
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "Am I a bad person",
     postTypeId: 5,
     userId: 9,
@@ -112,6 +140,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "How to deliver feedback",
     postTypeId: 4,
     userId: 1,
@@ -120,6 +150,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "What vegetable?",
     postTypeId: 1,
     userId: 9,
@@ -128,6 +160,8 @@ module.exports = {
     updatedAt: new Date() },
 
     {
+      createdAt: new Date(),
+      updatedAt: new Date(),
     name: "Haunted foods",
     postTypeId: 6,
     userId: 10,

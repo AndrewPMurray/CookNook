@@ -73,6 +73,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // add'l scripts as needed
-
-
+    
 });
