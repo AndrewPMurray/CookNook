@@ -1,10 +1,9 @@
 extends layout.pug
 
 block content
-  div#question-page
     if locals.authenticated
       h1#greeting Hello, #{user.username}
-    div
+    div#question-page
       each question in questions
         div.question-box
           h3.question-author= question.User.username
