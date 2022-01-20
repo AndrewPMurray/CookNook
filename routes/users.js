@@ -36,7 +36,7 @@ const userValidators = [
       .isLength({ min: 8 })
       .withMessage('Password must be at least 8 characters long')
       .custom((value) => {
-          const passCheck = /^(?=.*[a-z].*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).*$/g
+          const passCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).*$/g
           if (!(passCheck.test(value))) {
               throw new Error('Password must contain at least 1 lowercase letter, 1 uppercase letter, a number, and a special character (! @ # $ % ^ & *)')
           }
