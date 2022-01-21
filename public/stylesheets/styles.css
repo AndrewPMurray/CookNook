@@ -2,6 +2,8 @@
 position: absolute;
 margin-left: 5px;
 z-index: 0;
+text-shadow:2px 2px 4px rgba(0, 0, 0, 0.5);
+color: rgb(50, 50, 50);
 }
 
 * {
