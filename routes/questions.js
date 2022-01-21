@@ -56,6 +56,22 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         comments
     });
 
+
 }));
+
+router.post('/delete/:id(\\d+)', async(req, res) => {
+    const questionId = parseInt(req.params.id, 10);
+    console.log(questionId)
+
+    const answers = await Answer.findAll({
+        where: {
+            questionId
+        }
+    })
+    answers.forEach(answer => answer.destroy())
+    const question = await Question.findByPk(questionId);
+    await question.destroy();
+    res.redirect('/')
+})
 
 module.exports = router;
