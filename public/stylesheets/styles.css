@@ -64,6 +64,91 @@ body {
   border-radius: 15px;
 }
 
+.topic-box {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  justify-content: center;
+}
+
+.topic-link {
+  margin: auto;
+}
+
+#picture-1 {
+  background-image: url("../images/topic1.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-2 {
+background-image: url("../images/topic2.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-3 {
+  background-image: url("../images/topic3.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-4 {
+  background-image: url("../images/topic4.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-5 {
+  background-image: url("../images/topic5.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-6 {
+  background-image: url("../images/topic6.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-7 {
+  background-image: url("../images/topic7.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-8 {
+  background-image: url("../images/topic8.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-9 {
+  background-image: url("../images/topic9.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#picture-10 {
+  background-image: url("../images/topic10.jpeg");
+  background-size: cover;
+  height: 75%;
+  border-radius: 5px;
+}
+
+#topic-page {
+  height: 100px;
+}
+
 .question-author {
   font-weight: 700;
 }
@@ -457,7 +542,6 @@ input {
   display: flex;
   align-content: center;
   border:#b82525 solid 1px;
-  background-image: url("../images/pexels-mister-mister-3434523.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
