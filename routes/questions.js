@@ -3,13 +3,14 @@ var router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const { csrfProtection, asyncHandler } = require('../utils')
-const { Question, User, Answer, Comment, Like } = require('../db/models');
+const { Question, User, Answer, Comment, Like, PostType } = require('../db/models');
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
     if (!req.session.auth) {
         res.redirect('/landing');
     }
-    const postTypes = await db.PostType.findAll()
+    const postTypes = await PostType.findAll()
+
     res.render('question-form', {
         title: "Ask a Question",
         csrfToken: req.csrfToken(),
@@ -55,6 +56,22 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         comments
     });
 
+
 }));
+
+router.post('/delete/:id(\\d+)', async(req, res) => {
+    const questionId = parseInt(req.params.id, 10);
+    console.log(questionId)
+
+    const answers = await Answer.findAll({
+        where: {
+            questionId
+        }
+    })
+    answers.forEach(answer => answer.destroy())
+    const question = await Question.findByPk(questionId);
+    await question.destroy();
+    res.redirect('/')
+})
 
 module.exports = router;
