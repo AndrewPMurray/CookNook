@@ -2,6 +2,7 @@ extends signup-login-layout.pug
 
 block head
   body.outer-class
+    div.form-container
       form(action='/landing' method='post')#login-form
         .error-messages
           ul.error-list
@@ -19,3 +20,4 @@ block head
           div.space#buttons
             button(type='submit').signup-button Login
             a(href='/users' class='login-button') Dont have an account?
+            a(href='/landing' class='login-button') Demo User
