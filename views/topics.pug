@@ -1,10 +1,10 @@
 extends layout.pug
 
 block content
- h1.topic-title Welcome to Topics!
-    div.topics-page
-        each topic in topics
-         .topics-box
-          p=topic.name
-            a(href=`/topics/${topic.id}`)
-              img(src="/public/images/CookNook Favicon-Black.png")
+  div#topic-page
+   h1.topic-title Welcome to Topics!
+      div.topics-page
+          each topic in topics
+            div.topic-box
+              div(id=`picture-${topic.id}`)
+              a(href=`/topics/${topic.id}` class='topic-link')=topic.name
