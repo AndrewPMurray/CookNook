@@ -51,7 +51,7 @@ module.exports = {
     {
       content: "The pork is unquestionably bad but it is a free country",
       userId: 3,
-      questionId: 10,
+      questionId: 11,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -59,7 +59,7 @@ module.exports = {
     {
       content: "This is bob's icecream, it was shut down as a front for the mob years ago",
       userId: 8,
-      questionId: 11,
+      questionId: 12,
       createdAt: new Date(),
       updatedAt: new Date()
     },

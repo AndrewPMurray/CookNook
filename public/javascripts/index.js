@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
                 html.innerText = fullText;
             });
         };
-    }
+    };
 
     // truncate answers that are too long
     const answers = document.querySelectorAll('.answer');

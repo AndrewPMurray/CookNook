@@ -23,7 +23,10 @@ async function searchQuestions(pattern) {
         };
     };
 
-    let uniqueMatches = [...new Set(matches)];
+    let uniqueMatches = new Set();
+    matches.forEach(question => {
+        uniqueMatches.add(question);
+    })
     return uniqueMatches
 };
 
@@ -38,29 +41,44 @@ async function searchTopics(pattern) {
             matches.push(topic);
         };
     };
-    let uniqueMatches = [...new Set(matches)];
+    let uniqueMatches = new Set();
+    matches.forEach(topic => {
+        uniqueMatches.add(topic)
+    })
     return uniqueMatches
 };
 
 router.post('/', asyncHandler(async(req, res) => {
-    let questionMatches= [];
-    let topicMatches = [];
-
     const { q } = req.body;
     const searchWordsArr = q.slice(0, q.length).split(' ');
 
+    let questions;
+    let topics;
+
     await Promise.all(searchWordsArr.map(async (word) => {
-        const questions = await searchQuestions(word)
-        const topics = await searchTopics(word)
-        questionMatches.push(questions)
-        topicMatches.push(topics)
+        questions = await searchQuestions(word)
+        topics = await searchTopics(word)
     }));
 
-    console.log(questionMatches);
-    console.log(topicMatches);
+    let qNames = [];
+    let qContents = [];
 
-    //res.render('search', { questions, topics })
+    questions.forEach(question => {
+        qNames.push(question.dataValues.name);
+        qContents.push(question.dataValues.content);
+    });
 
+    let topicNames = [];
+    topics.forEach(topic => {
+        topicNames.push(topic.dataValues.name);
+    });
+
+    console.log(q)
+    console.log(qNames)
+    console.log(qContents)
+    console.log(topicNames)
+
+    res.render('search', { q, qNames, qContents, topicNames })
 }));
 
 

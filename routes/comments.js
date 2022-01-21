@@ -20,16 +20,15 @@ router.post('/', async (req, res) => {
         content: comment, userId, questionId
     })
     if (req.url === '/'){
-    res.redirect('/')
-    return
+      res.redirect('/')
+      return
     }
-
     res.redirect(`/questions/${req.url.params.id}`)
 })
 
 router.post('/delete/:id(\\d+)', async(req, res) => {
     const answerId = parseInt(req.params.id, 10);
-    console.log(answerId)
+    console.log(answerId);
 
     const answer = await Answer.findByPk(answerId);
     await answer.destroy();

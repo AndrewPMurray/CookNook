@@ -10,10 +10,11 @@ router.get('/', async (req, res, next) => {
   }
   const questions = await Question.findAll({
   include: User,
-  limit: 10
+  limit: 10,
+  order: [['createdAt', 'DESC']]
   })
-  const userId = req.session.auth.userId
-  const answers = await Answer.findAll()
+  const userId = req.session.auth.userId;
+  const answers = await Answer.findAll();
   const users = await User.findAll();
   res.render('index', {users, userId, questions, answers});
 });
