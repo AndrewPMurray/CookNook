@@ -4,11 +4,14 @@ block content
 
 
   div(id=`topic-page-${topic.id}`)
-  div.question-box
-   each question in questions
-    if question.postTypeId === topic.id
-       p=question.content
-        each answer in answers
-         if answer.questionId === question.id
-          .answer-box
-           p=answer.content
+  unless questions < 1
+   div.question-box
+    each question in questions
+     if question.postTypeId === topic.id
+        p=question.content
+         each answer in answers
+          if answer.questionId === question.id
+           .answer-box
+            p=answer.content
+  else
+   p="nada"

@@ -447,31 +447,7 @@ input {
   line-height: 35px;
 }
 
-.topics-page {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  grid-auto-rows: minmax(100px, auto);
-  margin: auto;
-}
 
-.topics-box {
-  border: #b82525 1px solid;
-  width: 300px;
-  height: 200px;
-  margin: auto;
-  background-color: white;
-  padding: 40px;
-  font: white;
-
-}
-.topic-title {
-  display: flex;
-  align-content: center;
-  border:#b82525 solid 1px;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.5);
