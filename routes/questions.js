@@ -1,19 +1,77 @@
 var express = require('express');
 var router = express.Router();
-const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 
 const { csrfProtection, asyncHandler } = require('../utils')
-const db = require('../db/models');
+const { Question, User, Answer, Comment, Like, PostType } = require('../db/models');
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
+    if (!req.session.auth) {
+        res.redirect('/landing');
+    }
+    const postTypes = await PostType.findAll()
+
     res.render('question-form', {
-        csrfToken: req.csrfToken()
+        title: "Ask a Question",
+        csrfToken: req.csrfToken(),
+        postTypes,
     });
 }));
 
 router.post('/', csrfProtection, asyncHandler(async(req, res) => {
-    
-}))
+    const {
+        name,
+        postTypeId,
+        content,
+    } = req.body
+
+    if (req.session.auth) {
+        const question = await Question.create({
+            name,
+            postTypeId,
+            userId: req.session.user.id,
+            content,
+        });
+
+        res.redirect(`/questions/${question.id}`);
+    };
+    res.redirect('/landing');
+}));
+
+router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+    const questionId = parseInt(req.params.id, 10);
+    const question = await Question.findOne({
+        include: User,
+        where: {
+            id: questionId
+        }
+    });
+    const answers = await Answer.findAll();
+    const comments = await Comment.findAll();
+
+    res.render('question-page', {
+        title: 'Question',
+        question,
+        answers,
+        comments
+    });
+
+
+}));
+
+router.post('/delete/:id(\\d+)', async(req, res) => {
+    const questionId = parseInt(req.params.id, 10);
+    console.log(questionId)
+
+    const answers = await Answer.findAll({
+        where: {
+            questionId
+        }
+    })
+    answers.forEach(answer => answer.destroy())
+    const question = await Question.findByPk(questionId);
+    await question.destroy();
+    res.redirect('/')
+})
 
 module.exports = router;

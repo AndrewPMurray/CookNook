@@ -61,7 +61,6 @@ router.post('/', asyncHandler(async(req, res) => {
 
     //res.render('search', { questions, topics })
 
-
 }));
 
 

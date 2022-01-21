@@ -14,13 +14,11 @@ router.post('/', async (req, res) => {
         return;
     }
     const { userId } = req.session.auth
-    if (!req.session.auth) {
-        res.redirect('/landing')
-    }
+
     const newAnswer = await Answer.create({
         content: comment, userId, questionId
     })
-
+    res.redirect('/')
 })
 
 

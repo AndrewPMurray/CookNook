@@ -14,10 +14,14 @@ block content
       div.question-form-body
         form(action="/questions" method="post")
             input(type="hidden" name="_csrf" value=csrfToken)
-            label(for="title") Ask your question here:
-            input(name="title" placeholder="Start your question with \"What\", \"How\", \"Why\", etc.")
+            label(for="name") Ask your question here:
+            input(name="name" placeholder="Start your question with \"What\", \"How\", \"Why\", etc.")
             label(for="content") To allow others to best answer your question, please provide details for your question below:
             textarea(name="content")
+            label(for="postTypeId") Select Topic for this Question
+            select(name="postTypeId")
+              each postType in postTypes 
+                option(value=postType.id)= postType.name
             div.space#buttons
                 a(href="/" id="cancel") cancel
                 button(type="submit" id="ask-question-button") Ask Question

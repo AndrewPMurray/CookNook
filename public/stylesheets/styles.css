@@ -1,12 +1,17 @@
 #greeting {
 position: absolute;
-
-margin-left: 5px
+margin-left: 5px;
+z-index: 0;
 }
 
 .answer-box {
   border-top: 1px solid grey;
   width: 100%;
+  padding: 0 10px
+}
+
+#nav {
+  z-index: 2;
 }
 
 body {
@@ -16,6 +21,10 @@ body {
   #question-page {
     background-color: rgb(231, 231, 231);
   }
+
+.question-content {
+  padding: 0 10px;
+}
 
 #main-nav-bar {
   position: sticky;
@@ -50,13 +59,37 @@ body {
   border-radius: 15px;
 }
 
+.topic-box {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  justify-content: center;
+}
+
+.topic-link {
+  margin: auto;
+}
+
+
+
 .question-author {
   font-weight: 700;
+}
+
+.delete-post {
+  position: absolute;
+  margin-left: 150px;
+  color: rgb(184, 38, 37);
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .question-box {
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
   align-items: center;
   margin: auto;
   margin-bottom: 10px;
@@ -64,6 +97,7 @@ body {
   width: 550px;
   height: auto;
   background-color: white;
+  padding: 10px 10px
 }
 
 #add-question {
@@ -119,14 +153,13 @@ body {
   align-items: center;
   height: 30px;
   justify-content: center;
-  width: 280px;
+  width: auto;
   color: rgba(184, 38, 37)
 }
 
 #buttons {
     display: flex;
     gap: 10px;
-    align-items: center;
     justify-content: flex-end;
 }
 
@@ -428,7 +461,16 @@ input {
   display: flex;
   align-content: center;
   border:#b82525 solid 1px;
-  background-image: url("../images/pexels-mister-mister-3434523.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:1000;
 }
