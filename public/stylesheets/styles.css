@@ -1,8 +1,3 @@
-@font-face {
-    font-family: Din-medium;
-    src: url("/public/DIN/DIN\ Medium.ttf");
-}
-
 #greeting {
 position: absolute;
 margin-left: 5px;

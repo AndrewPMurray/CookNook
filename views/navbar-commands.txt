@@ -10,5 +10,11 @@ Design a navbar
 
 Code a navbar
 - Make a nav element with #nav id
-- Nest a div element with #logo id
-- Make an a element with 
+- Make an a element with #logo id
+
+
+
+Creating a search bar
+- You would think of making a helper function and doing a forEach() or some iteration
+- You might also think of regex, but regex is slow and not good for sorting through large data
+- You can do some reading on it, but to cut to the chase - USE THE BOYER MOORE PATTERN MATCHING ALGORITHM
