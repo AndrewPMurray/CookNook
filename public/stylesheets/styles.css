@@ -153,6 +153,16 @@ background-image: url("../images/topic2.jpeg");
   font-weight: 700;
 }
 
+.delete-post {
+  position: absolute;
+  margin-left: 150px;
+  color: rgb(184, 38, 37);
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
 .question-box {
   display: flex;
   flex-direction: column;

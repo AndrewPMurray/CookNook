@@ -6,6 +6,9 @@ block content
     div#question-page
       each question in questions
         div.question-box
+          if question.userId === user.id
+            form(action=`/questions/delete/${question.id}` method='post')
+              button.delete-post Delete Question
           h3.question-author= question.User.username
           h2.question-title= question.name
           p.question-content= question.content
