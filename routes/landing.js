@@ -73,7 +73,7 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req, res) 
                 req.session.auth = {
                     userId: user.id,
                 };
-                return res.redirect('/');
+                return req.session.save(() => res.redirect('/'));
             }
         }
         // if username invalid, add error to errors array for rendering in html
