@@ -3,13 +3,14 @@ var router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const { csrfProtection, asyncHandler } = require('../utils')
-const { Question, User, Answer, Comment, Like } = require('../db/models');
+const { Question, User, Answer, Comment, Like, PostType } = require('../db/models');
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
     if (!req.session.auth) {
         res.redirect('/landing');
     }
-    const postTypes = await db.PostType.findAll()
+    const postTypes = await PostType.findAll()
+
     res.render('question-form', {
         title: "Ask a Question",
         csrfToken: req.csrfToken(),
