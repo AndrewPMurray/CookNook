@@ -1,20 +1,45 @@
 const express = require('express');
 const router = express.Router();
-const questions = require('../db/seeders/20220119203615-Question');
-const topics = require("../db/seeders/20220119185804-PostTypes");
+const bcrypt = require('bcrypt');
+const { Op } = require("sequelize");
 
-const { check, validationResult } = require('../utils');
 
 const { csrfProtection, asyncHandler } = require('../utils');
-const { User } = require("../db/models");
+
+const { Question, PostType, Sequelize }= require("../db/models");
 
 //Search
-router.get('/', csrfProtection, (req, res, next) => {
-
-    // console.log(req.body);
-
+router.get('/', (req, res) => {
+    res.render('search');
 });
 
-router.post('/', )
+router.post('/', asyncHandler(async(req, res) => {
+    let searchResultsArr = [];
+
+    const { q } = req.body;
+    let searchWordsArr = q.slice(0, q.length - 1).split(" ");
+
+    searchWordsArr.forEach(word => {
+        const questions = await Question.findAll({
+            where: {
+                content: {
+                    [Op.regexp]: Sequelize.literal(`${word}`)
+                }
+            }
+        });
+
+        const topics = await PostType.findAll({
+            where: {
+                name: {
+                    [Op.regexp]: Sequelize.literal(`${word}`)
+                }
+            }
+        });
+        console.log(questions);
+        console.log(topics);
+    });
+
+}));
+
 
 module.exports = router;
