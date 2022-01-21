@@ -68,7 +68,9 @@ body {
 }
 
 .comment-value {
-  border-radius: 15px;
+  border-radius: 10px;
+  resize: none;
+  width: auto;
 }
 
 .topic-box {
