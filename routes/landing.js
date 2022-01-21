@@ -44,9 +44,8 @@ router.get('/demo', asyncHandler(async (req, res) => {
         };
         return req.session.save(() => res.redirect('/'))
     } else {
-        const user = await User.findOne({ where: { emailAddress } });
         req.session.auth = {
-            userId: user.id,
+            userId: demoUser.id,
         };
         req.session.save(() => res.redirect('/'));
     }
