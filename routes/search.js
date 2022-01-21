@@ -19,7 +19,7 @@ router.post('/', asyncHandler(async(req, res) => {
     const { q } = req.body;
     let searchWordsArr = q.slice(0, q.length - 1).split(" ");
 
-    searchWordsArr.forEach(word => {
+    searchWordsArr.forEach(async(word) => {
         const questions = await Question.findAll({
             where: {
                 content: {
