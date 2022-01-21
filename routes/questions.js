@@ -33,9 +33,9 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
             content,
         });
 
-        req.save(() => res.redirect(`/questions/${question.id}`));
+        req.session.save(() => res.redirect(`/questions/${question.id}`));
     };
-    req.save(() => res.redirect('/landing'));
+    req.session.save(() => res.redirect('/landing'));
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
