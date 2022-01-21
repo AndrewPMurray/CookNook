@@ -33,9 +33,9 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
             content,
         });
 
-        res.redirect(`/questions/${question.id}`);
+        req.session.save(() => res.redirect(`/questions/${question.id}`));
     };
-    res.redirect('/landing');
+    req.session.save(() => res.redirect('/landing'));
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
@@ -61,7 +61,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 router.post('/delete/:id(\\d+)', async(req, res) => {
     const questionId = parseInt(req.params.id, 10);
-    console.log(questionId)
 
     const answers = await Answer.findAll({
         where: {

@@ -1,4 +1,23 @@
 extends layout.pug
 
 block content
-
+    div#search-page
+        aside#sidebar By Type
+            button(id="questions-btn" type="button" name="questions") Questions
+            button(id="topics-btn" type="button" name="topics") Topics
+        div#results-feed
+            div#results-container
+                div(id="results") Results for:
+                div(id="search-words") #{q}
+            div#topics
+                each topic in topicNames
+                    div#topics-div
+                        a#topic-image
+                        a=topic.name
+            div#questions
+                each question in qNames
+                    div#question-div
+                        a=question
+                else
+                    div#error
+                        p Hmm... we couldn't find any results.

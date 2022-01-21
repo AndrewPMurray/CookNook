@@ -1,12 +1,19 @@
-@font-face {
-    font-family: Din-medium;
-    src: url("/public/DIN/DIN\ Medium.ttf");
-}
-
 #greeting {
 position: absolute;
 margin-left: 5px;
 z-index: 0;
+}
+
+* {
+  font-family: din-2014;
+}
+
+html {
+  height: 100%;
+}
+
+.answer {
+  color: rgb(99, 98, 98)
 }
 
 .answer-box {
@@ -61,7 +68,9 @@ body {
 }
 
 .comment-value {
-  border-radius: 15px;
+  border-radius: 10px;
+  resize: none;
+  width: auto;
 }
 
 .topic-box {
@@ -158,14 +167,14 @@ body {
   align-items: center;
   height: 30px;
   justify-content: center;
-  width: 280px;
+  width: auto;
   color: rgba(184, 38, 37)
 }
 
 #buttons {
     display: flex;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
 input {

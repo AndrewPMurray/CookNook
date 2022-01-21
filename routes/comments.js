@@ -21,5 +21,14 @@ router.post('/', async (req, res) => {
     return res.redirect(`/question${questionId}`)
 })
 
+router.post('/delete/:id(\\d+)', async(req, res) => {
+    const answerId = parseInt(req.params.id, 10);
+    console.log(answerId)
+
+    const answer = await Answer.findByPk(answerId);
+    await answer.destroy();
+    res.redirect('/')
+})
+
 
 module.exports = router
