@@ -61,7 +61,6 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 router.post('/delete/:id(\\d+)', async(req, res) => {
     const questionId = parseInt(req.params.id, 10);
-    console.log(questionId)
 
     const answers = await Answer.findAll({
         where: {
