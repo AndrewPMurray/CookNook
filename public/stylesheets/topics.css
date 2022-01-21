@@ -1,0 +1,247 @@
+#picture-1 {
+    background-image: url("../images/topic1.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-2 {
+  background-image: url("../images/topic2.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-3 {
+    background-image: url("../images/topic3.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-4 {
+    background-image: url("../images/topic4.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-5 {
+    background-image: url("../images/topic5.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-6 {
+    background-image: url("../images/topic6.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-7 {
+    background-image: url("../images/topic7.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-8 {
+    background-image: url("../images/topic8.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-9 {
+    background-image: url("../images/topic9.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #picture-10 {
+    background-image: url("../images/topic10.jpeg");
+    background-size: cover;
+    height: 75%;
+    border-radius: 5px;
+  }
+
+  #topic-page {
+    height: 100px;
+  }
+
+.topics-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .topics-box {
+    border: #b82525 1px solid;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+
+  }
+  .topic-title {
+    margin-top: 40px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+
+.topics-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .topics-box {
+    border: #b82525 1px solid;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    font: white;
+
+  }
+  .topic-title {
+    margin-top: 40px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Din-medium;
+    src: url("../DIN/DIN\ Medium.ttf");
+
+  }
+
+
+  #topic-page-1 {
+    background-image: url("../images/topic1.jpeg");
+    background-size: contain;
+    background-image: no-repeat;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-2 {
+    background-image: url("../images/topic2.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-3 {
+    background-image: url("../images/topic3.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-4 {
+    background-image: url("../images/topic4.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-5 {
+    background-image: url("../images/topic5.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-6 {
+    background-image: url("../images/topic6.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-7 {
+    background-image: url("../images/topic7.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-8 {
+    background-image: url("../images/topic8.jpeg");
+    height: 300px;
+    display: flex;
+    background-size: contain;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-9 {
+    background-image: url("../images/topic9.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+
+  #topic-page-10 {
+    background-image: url("../images/topic10.jpeg");
+    background-size: contain;
+    height: 300px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
