@@ -1,5 +1,16 @@
 extends layout.pug
 
 block content
-  div 
-    p= question
+  div#question-page 
+    div.question-box
+      h3.question-author= question.User.username 
+      h2.question-title= question.name 
+      p.question-content= question.content
+      each answer in answers
+        if answer.questionId === question.id
+          .answer-box
+            p=answer.content
+      form(action='/comments', method='post').add-comment
+        input(type='hidden', value=question.id, name='questionId')
+        textarea.comment-value(name="comment", cols="30", rows="5")
+        button(type='submit').comment-button Post Comment

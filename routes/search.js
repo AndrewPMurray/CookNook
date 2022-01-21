@@ -38,7 +38,7 @@ router.post('/', asyncHandler(async(req, res) => {
         console.log(questions);
         console.log(topics);
     });
-
+    
 }));
 
 

@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 
 const { csrfProtection, asyncHandler } = require('../utils')
-const db = require('../db/models');
+const { Question, User, Answer, Comment, Like } = require('../db/models');
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
     if (!req.session.auth) {
@@ -26,7 +25,7 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
     } = req.body
 
     if (req.session.auth) {
-        const question = await db.Question.create({
+        const question = await Question.create({
             name,
             postTypeId,
             userId: req.session.user.id,
@@ -40,15 +39,20 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const questionId = parseInt(req.params.id, 10);
-    const question = await db.Question.findByPk(questionId, {
-        include: {
-            model: db.Answer
+    const question = await Question.findOne({
+        include: User,
+        where: {
+            id: questionId
         }
-    })
+    });
+    const answers = await Answer.findAll();
+    const comments = await Comment.findAll();
 
     res.render('question-page', {
         title: 'Question',
         question,
+        answers,
+        comments
     });
 
 }));
