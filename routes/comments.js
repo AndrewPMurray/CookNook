@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     const newAnswer = await Answer.create({
         content: comment, userId, questionId
     })
-    return res.redirect(`/question${questionId}`)
+    return res.redirect(`/question/${questionId}`)
 })
 
 router.post('/delete/:id(\\d+)', async(req, res) => {
