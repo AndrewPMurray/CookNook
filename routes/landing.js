@@ -24,6 +24,34 @@ router.get('/', csrfProtection, (req, res) => {
     })
 });
 
+router.get('/demo', asyncHandler(async (req, res) => {
+    const username = "DemoUser"
+    const emailAddress = "demo@demo.demo"
+    const password = "password"
+    const demoUser = await User.findOne({ where: { emailAddress } })
+
+    if (demoUser === null) {
+        const hashedPassword = await bcrypt.hash(password, 10)
+        await User.create({
+            username, emailAddress, hashedPassword
+        })
+
+        const newUser = await User.findOne({ where: { emailAddress } })
+
+        req.session.user = newUser;
+        req.session.auth = {
+            userId: newUser.id,
+        };
+        return req.session.save(() => res.redirect('/'))
+    } else {
+        const user = await User.findOne({ where: { emailAddress } });
+        req.session.auth = {
+            userId: user.id,
+        };
+        req.session.save(() => res.redirect('/'));
+    }
+}));
+
 router.post('/', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
     // Deconstruct username and password from req object
     const {
