@@ -5,13 +5,17 @@ block content
 
   div(id=`topic-page-${topic.id}`)
   unless questions < 1
-   div.question-box
-    each question in questions
-     if question.postTypeId === topic.id
-        p=question.content
-         each answer in answers
-          if answer.questionId === question.id
-           .answer-box
-            p=answer.content
+    div.question-box
+      each question in questions
+        if question.postTypeId === topic.id
+          each user in users
+            if user.id === question.userId
+              h3.question-author= user.username
+          h2.question-title: a(href=`/questions/${question.id}`)= question.name
+          p=question.content
+            each answer in answers
+              if answer.questionId === question.id
+                .answer-box
+                  p=answer.content
   else
    p="nada"

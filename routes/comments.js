@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     const newAnswer = await Answer.create({
         content: comment, userId, questionId
     })
-    res.redirect('/')
+    return res.redirect(`/question${questionId}`)
 })
 
 
