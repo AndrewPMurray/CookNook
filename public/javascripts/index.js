@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // truncate answers that are too long
     const answers = document.querySelectorAll('.answer');
+    console.log(answers);
     answers.forEach((answer) => {
         truncateText(answer);
     });
@@ -73,7 +74,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
     //             }
     //         });
     //     });
-}
 
     // add'l scripts as needed
     

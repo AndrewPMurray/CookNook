@@ -9,7 +9,7 @@ block content
       each answer in answers
         if answer.questionId === question.id
           .answer-box
-            p=answer.content
+            p.answer=answer.content
       form(action='/comments/question', method='post').add-comment
         input(type='hidden', value=question.id, name='questionId')
         textarea.comment-value(name="comment", cols="30", rows="5")
