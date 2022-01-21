@@ -18,8 +18,7 @@ router.post('/', async (req, res) => {
     const newAnswer = await Answer.create({
         content: comment, userId, questionId
     })
-    console.log("ORIGINAL URL HERE!!! GET YER ORIGINAL URL!!!", req.originalUrl)
-    res.redirect('/')
+    return res.redirect(`/question${questionId}`)
 })
 
 router.post('/delete/:id(\\d+)', async(req, res) => {
