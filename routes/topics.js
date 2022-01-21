@@ -17,7 +17,11 @@ router.get("/:id(\\d*)", asyncHandler(async (req, res) => {
     const topicId = req.params.id;
     const topic = await PostType.findByPk(topicId);
     const questions = await Question.findAll()
-    const answers = await Answer.findAll()
+    const answers = await Answer.findAll(
+      {include: Question,
+
+     })
+     console.log(answers)
     res.render("topic", {topic, questions, answers})
 }))
 
