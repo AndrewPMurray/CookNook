@@ -8,6 +8,10 @@ z-index: 0;
   font-family: din-2014;
 }
 
+.answer {
+  color: rgb(99, 98, 98)
+}
+
 .answer-box {
   border-top: 1px solid grey;
   width: 100%;
