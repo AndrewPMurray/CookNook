@@ -70,7 +70,7 @@ router.post('/', asyncHandler(async(req, res) => {
 
     let topicNames = [];
     topics.forEach(topic => {
-        topicNames.push(topic.dataValues.name);
+        topicNames.push(topic.dataValues.name.toLowerCase());
     });
 
     console.log(q)

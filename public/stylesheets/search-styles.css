@@ -5,6 +5,15 @@
   justify-content: space-around;
   width: 100vw;
   height: 100vh;
+  padding-top: 2.5vh;
+}
+
+#sidebar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #EFEFEF;
+  height: 10vh;
+  width: 10vw;
 }
 
 #sidebar {
@@ -15,9 +24,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
-  width: 15vw;
+  width: 9vw;
   height: 10vh;
-  background-color:rgb(231, 231, 231)
+  padding-left: 10px;
+}
+
+#all-btn {
+  font-family: din-2014;
+  font-weight: 700;
+  font-size: 15px;
+  color:rgba(0, 0, 0, 0.5);
+  border: solid rgba(231, 231, 231, 0.5) 1px;
+  text-align: left;
+  margin-top: 0.5vh;
+  background-color: rgb(231, 231, 231);
 }
 
 #questions-btn {
@@ -25,9 +45,10 @@
   font-weight: 700;
   font-size: 15px;
   color:rgba(0, 0, 0, 0.5);
-  border: solid white 1px;
+  border: solid rgba(231, 231, 231, 0.5) 1px;
   text-align: left;
   margin-top: 0.5vh;
+  background-color: rgb(231, 231, 231);
 }
 
 #topics-btn {
@@ -35,7 +56,209 @@
   font-weight: 700;
   font-size: 15px;
   color:rgba(0, 0, 0, 0.5);
-  border: solid white 1px;
+  border: solid rgba(231, 231, 231, 0.5) 1px;
   text-align: left;
   margin-top: 1vh;
+  background-color: rgb(231, 231, 231);
+}
+
+#results-feed {
+  width: 30vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+#results-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:20vw;
+  height: 3vh;
+  border: solid rgba(0, 0, 0, 0.25) 1px;
+  background-color: rgb(231, 231, 231);
+}
+
+#results {
+  font-family: din-2014;
+  font-weight: 400;
+  font-size: 15px;
+  color:rgb(0, 0, 0);
+  padding: 0px 0px 0px 10px;
+}
+
+#search-words {
+  font-family: din-2014;
+  font-weight: 700;
+  font-size: 15px;
+  color:rgb(0, 0, 0);
+  padding: 0px 0px 0px 4px;
+}
+
+#topics-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width:20vw;
+  height: 6vh;
+  border: solid rgba(0, 0, 0, 0.25) 1px;
+  background-color: rgb(231, 231, 231);
+}
+
+#topic-name {
+  font-family: din-2014;
+  font-weight: 700;
+  font-size: 15px;
+  color:rgba(0, 0, 0, 0.5);
+  padding: 0px 0px 0px 10px;
+  text-decoration: none;
+}
+
+#vegetable-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic1.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#tofu-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic2.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#pasta-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic3.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#chicken-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic4.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#beef-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic5.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#pork-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic6.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#fish-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic7.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#shellfish-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic8.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#grilling-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic9.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#dessert-image {
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/topic10.jpeg");
+  background-size: contain;
+  border-radius: 5px;
+  margin-left: 0.25vw;
+}
+
+#questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width:20vw;
+  height: 60vh;
+  background-color: rgb(231, 231, 231);
+  box-sizing: content-box;
+}
+
+#question-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width:20vw;
+  height: 3vh;
+  border: solid rgba(0, 0, 0, 0.25) 1px;
+  background-color: rgb(231, 231, 231);
+}
+
+#quesiton-name {
+  font-family: din-2014;
+  font-weight: 400;
+  font-size: 15px;
+  color:rgba(0, 0, 0, 0.5);
+  padding: 0px 0px 0px 10px;
+}
+
+#error {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: space-between;
+  width:20vw;
+  height: 35vh;
+  border: solid rgba(0, 0, 0, 0.25) 1px;
+  background-color: rgb(231, 231, 231);
+  box-sizing: content-box;
+}
+
+#error-msg {
+  font-family: din-2014;
+  font-weight: 400;
+  font-size: 17px;
+  color:rgba(0, 0, 0, 1);
+  padding: 0px 0px 0px 10px;
+}
+
+#broken-plate {
+  width: 20vw;
+  height: 27vh;
+  background-image: url('../images/Depositphotos_8196301_s-2015.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: grayscale(85%);
 }
