@@ -1,0 +1,24 @@
+extends layout.pug
+
+include sidebar.pug
+
+block content
+  if locals.authenticated
+    +sidebar
+    div#homepage
+      div#posts-container
+        each question in questions
+          div#posts
+            if question.userId === user.id
+              form(action=`/questions/delete/${question.id}` method='post')
+                button.delete-post Delete Question
+            div#user-asked-about
+              div(id="user-icon")
+              div#text-align-div
+                p(id="username")= question.User.username
+                p(id="asked") asked about
+                if question.name.length <= 25
+                  a(href=`/questions/${question.dataValues.id}` id="q-title")= question.name
+                else
+                  a(href=`/questions/${question.dataValues.id}` id="q-title")= `${question.name.substring(0, 20)} ...`
+            a(href=`/questions/${question.dataValues.id}` id="q-content")= question.content

@@ -14,7 +14,7 @@ async function searchQuestions(pattern) {
 
     let questions = await Question.findAll();
 
-    for(let i = 0; i < questions.length - 1; i++) {
+    for(let i = 0; i < questions.length; i++) {
         let question = questions[i];
         if(question.name.toLowerCase().includes(pattern) || question.content.toLowerCase().includes(pattern)) {
             matches.push(question);
@@ -33,7 +33,7 @@ async function searchTopics(pattern) {
 
     let topics = await PostType.findAll();
 
-    for(let i = 0; i < topics.length - 1; i++) {
+    for(let i = 0; i < topics.length; i++) {
         let topic = topics[i];
         if(topic.name.toLowerCase() === pattern) {
             matches.push(topic);

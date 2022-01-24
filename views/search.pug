@@ -1,54 +1,60 @@
 extends layout.pug
 
+include sidebar.pug
+
 block content
-    div#search-page
-        div#sidebar-container
-            aside#sidebar By Type
-                button(id="all-btn" type="button" name="all") All Types
-                button(id="questions-btn" type="button" name="questions") Questions
-                button(id="topics-btn" type="button" name="topics") Topics
-        div#results-feed
-            div#results-container
-                div(id="results") Results for:
-                div(id="search-words") #{q}
-            div#topics-container
-                each topic in topicNames
-                    if topic === 'vegetables'
-                        a(href="/topics/1" id="vegetable-image")
-                        a(href="/topics/1" id="topic-name") Vegetables
-                    else if topic === 'tofu'
-                        a#tofu-image
-                        a(href="/topics/2" id="topic-name") Tofu
-                    else if topic === 'pasta'
-                        a#pasta-image
-                        a(href="/topics/3" id="topic-name") Pasta
-                    else if topic === 'chicken'
-                        a#chicken-image
-                        a(href="/topics/4" id="topic-name") Chicken
-                    else if topic === 'beef'
-                        a#beef-image
-                        a(href="/topics/5" id="topic-name") Beef
-                    else if topic === "pork"
-                        a#pork-image
-                        a(href="/topics/6" id="topic-name") Pork
-                    else if topic === 'fish'
-                        a#fish-image
-                        a(href="/topics/7" id="topic-name") Fish
-                    else if topic === 'shellfish'
-                        a#shellfish-image
-                        a(href="/topics/8" id="topic-name") Shellfish
-                    else if topic === 'grilling'
-                        a#grilling-image
-                        a(href="/topics/9" id="topic-name") Grilling
-                    else
-                        a#dessert-image
-                        a(href="/topics/10" id="topic-name") Dessert
-            div#questions-container
-                each question in qData
-                    div#question-div
-                        a(href=`/questions/${question.id}` id="question-name")=question.name
-                        p(id="question-text") #{question.content}
-                else
-                    div#error
+    if locals.authenticated
+        +sidebar
+        div#search-page
+            div#results-feed
+                div#results-container
+                    div(id="results") Results for:
+                    div(id="search-words") #{q}
+                if topicNames.length >= 1
+                    div#topics-container-s
+                        each topic in topicNames
+                            if topic === 'vegetables'
+                                a(href="/topics/1" id="vegetable-image")
+                                a(href="/topics/1" id="topic-name") Vegetables
+                            else if topic === 'tofu'
+                                a#tofu-image
+                                a(href="/topics/2" id="topic-name") Tofu
+                            else if topic === 'pasta'
+                                a#pasta-image
+                                a(href="/topics/3" id="topic-name") Pasta
+                            else if topic === 'chicken'
+                                a#chicken-image
+                                a(href="/topics/4" id="topic-name") Chicken
+                            else if topic === 'beef'
+                                a#beef-image
+                                a(href="/topics/5" id="topic-name") Beef
+                            else if topic === "pork"
+                                a#pork-image
+                                a(href="/topics/6" id="topic-name") Pork
+                            else if topic === 'fish'
+                                a#fish-image
+                                a(href="/topics/7" id="topic-name") Fish
+                            else if topic === 'shellfish'
+                                a#shellfish-image
+                                a(href="/topics/8" id="topic-name") Shellfish
+                            else if topic === 'grilling'
+                                a#grilling-image
+                                a(href="/topics/9" id="topic-name") Grilling
+                            else if topic === 'dessert'
+                                a#dessert-image
+                                a(href="/topics/10" id="topic-name") Dessert
+                            else
+                                div#nothing
+                div#questions-container-s
+                    each question in qData
+                        div#question-div
+                            if question.content < 150
+                                a(href=`/questions/${question.id}` id="question-name")=question.name
+                                p(id="question-text") #{question.content}
+                            else
+                                a(href=`/questions/${question.id}` id="question-name")=question.name
+                                p(id="question-text") #{question.content.substring(0, 145)}...
+                div#error
+                    if !topicNames.length && !qData.length
                         p(id="error-msg") Sorry... we couldn't find any results.
                         div(id="broken-plate")

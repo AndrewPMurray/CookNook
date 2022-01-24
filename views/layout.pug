@@ -8,6 +8,7 @@ html
       link(rel='stylesheet' href='/stylesheets/nav-styles.css')
       link(rel='stylesheet' href='/stylesheets/styles.css')
       link(rel='stylesheet' href='/stylesheets/topics.css')
+      link(rel='stylesheet' href='/stylesheets/topic.css')
       link(rel="stylesheet" href='/stylesheets/search-styles.css')
       link(rel="stylesheet" href='/stylesheets/homepage.css')
       link(rel="stylesheet" href='/stylesheets/sidebar.css')
@@ -25,6 +26,8 @@ html
           div#search-icon
           form(id="form" action="/search" method="post")
             input(id="search-input" type="search" spellcheck="on" autocorrect="off" incremental onkeyup="searchBar()" placeholder="Search CookNook" name="q" minlength="3" maxlength="255")
+        a(href="/question-form" id="add-question") Add question
         form(action="/users/logout" method="post")
           button(href="" type='submit' id="logout") Logout
+
   block content

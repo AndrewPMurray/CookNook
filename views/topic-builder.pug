@@ -1,0 +1,43 @@
+mixin topicBuilder(topicsNames)
+    if topicNames.length > 0
+        div#topics-container
+            each topic in topicNames
+                if topic === 'vegetables'
+                    a(href="/topics/1" id="vegetable-image")
+                    a(href="/topics/1" id="topic-name") Vegetables
+                else if topic === 'tofu'
+                    a#tofu-image
+                    a(href="/topics/2" id="topic-name") Tofu
+                else if topic === 'pasta'
+                    a#pasta-image
+                    a(href="/topics/3" id="topic-name") Pasta
+                else if topic === 'chicken'
+                    a#chicken-image
+                    a(href="/topics/4" id="topic-name") Chicken
+                else if topic === 'beef'
+                    a#beef-image
+                    a(href="/topics/5" id="topic-name") Beef
+                else if topic === "pork"
+                    a#pork-image
+                    a(href="/topics/6" id="topic-name") Pork
+                else if topic === 'fish'
+                    a#fish-image
+                    a(href="/topics/7" id="topic-name") Fish
+                else if topic === 'shellfish'
+                    a#shellfish-image
+                    a(href="/topics/8" id="topic-name") Shellfish
+                else if topic === 'grilling'
+                    a#grilling-image
+                    a(href="/topics/9" id="topic-name") Grilling
+                else
+                    a#dessert-image
+                    a(href="/topics/10" id="topic-name") Dessert
+                div#questions-container
+                            each question in qData
+                                div#question-div
+                                    a(href=`/questions/${question.id}` id="question-name")=question.name
+                                    p(id="question-text") #{question.content}
+                        if !topicNames.length && !qData.length
+                            div#error
+                                p(id="error-msg") Sorry... we couldn't find any results.
+                                div(id="broken-plate")

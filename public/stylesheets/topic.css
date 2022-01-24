@@ -1,0 +1,216 @@
+#topic-page-id {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    width: 100vw;
+    height: 100vh;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20vh;
+    margin-bottom: 10px;
+    border: 1px solid rgb(231, 231, 231);
+    width: 20vw;
+    height: auto;
+    background-color: #F3F3F3;
+    padding: 10px 20px;
+    z-index: 20;
+}
+
+
+.topic-title {
+margin-top: 40px;
+margin-left: 30px;
+display: flex;
+justify-content: center;
+align-content: center;
+background-size: contain;
+background-repeat: no-repeat;
+}
+
+#topic-banner-id {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100vw;
+    height: auto;
+    position: sticky;
+}
+
+
+#topic-page-1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner1.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-2 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner2.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-3 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner3.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-4 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner4.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-5 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner5.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-6 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner6.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-7 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner7.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-8 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner8.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-9 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner9.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}
+
+#topic-page-10 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("../images/banner/topic-banner10.png");
+    background-size: contain;
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    background-color: #E7E7E7;
+    position: fixed;
+    top: 4vh;
+    left: 0;
+    top: 0;
+    height: 25%;
+    width: 100%;
+}

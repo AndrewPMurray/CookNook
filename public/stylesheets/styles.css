@@ -2,13 +2,6 @@ body {
   overflow: scroll;
 }
 
-#greeting {
-position: absolute;
-margin-left: 5px;
-z-index: 0;
-text-shadow: 1px 1px 5px grey;
-}
-
 #redirect-404 {
   display: flex;
   justify-content: center;
@@ -63,7 +56,13 @@ html {
 }
 
 #question-page {
-    background-color: rgb(231, 231, 231);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  width: 100vw;
+  height: 100vh;
 }
 
 .question-content {
@@ -120,18 +119,19 @@ html {
   border-radius: 5px;
 }
 
-.question-box {
+.question-page-box {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  align-items: center;
-  margin: auto;
-  margin-bottom: 10px;
+  align-items: flex-start;
+  justify-content: center;
   border: 1px solid rgb(231, 231, 231);
-  width: 550px;
+  width: 20vw;
   height: auto;
-  background-color: white;
-  padding: 10px 10px
+  background-color: #F3F3F3;
+  padding: 10px 10px;
+  margin-top: 1.75vh;
+  padding-left: 15px;
 }
 
 #add-question {
@@ -142,22 +142,22 @@ html {
   background-color: black;
   color: white;
 }
-
-#add-question {
-  margin-right: 60px;
-}
-
 .question-form-container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: auto;
+  margin-top: 4vh;
 }
 
 .question-form-container-items {
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
   background-color: white;
   border-radius: 15px;
 }
@@ -169,15 +169,28 @@ html {
   text-decoration: none;
 }
 
+.question-form-tips {
+  background-color: rgba(184, 38, 37, 0.5);
+  width: 19.25vw;
+  height: 12.5vh;
+}
+
 .question-form-tips p {
   margin-left: 10px;
-  color:rgba(184, 38, 37);
+  color:white;
   font-weight: bold;
 }
 
 .question-form-tips > ul li {
   margin-left: 30px;
-  color:rgba(184, 38, 37);
+  color:white
+}
+
+.question-form-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .question-form-body > form > textarea {
@@ -190,7 +203,9 @@ html {
 }
 
 .question-form-header {
-  border-bottom: 1px solid red;
+  padding-bottom: -5px;
+  border-bottom: 1px solid rgb(184, 38, 37);
+  width: 19.25vw;
   align-content: center;
 }
 
@@ -209,21 +224,23 @@ html {
 .question-form-body > form > input {
   margin: 10px;
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 0px;
 }
 
 #ask-question-button {
-  background-color: rgba(184, 38, 37);
-  border-radius: 40px;
+  background-color: rgba(184, 38, 37, 0.5);
+  border-radius: 10px;
   height: 40px;
   width: 100px;
   font-family: sans-serif;
   color: white;
   border: 1px solid rgba(184, 38, 37, 0.5);
-  transition-duration: .5s;
-  font-family: Din-medium;
   text-align: center;
+}
+
+#ask-question-button:hover {
+  background-color: rgba(184, 38, 37, 1);
 }
 
 #cancel:hover {
@@ -233,18 +250,14 @@ html {
 #cancel {
   background-color: transparent;
   border-radius: 10px;
-  height: 40px;
-  width: 75px;
-  font-family: sans-serif;
-  color: gray;
-  transition-duration: .5s;
-  font-family: Din-medium;
-  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  line-height: 35px;
+  margin-right: 20px;
 }
 
-
+#cancel:hover {
+  color: rgba(0, 0, 0, 1)
+}
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.5);
@@ -254,4 +267,65 @@ html {
   top:0px;
   left:0px;
   z-index:1000;
+}
+
+#q-page-content {
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  width: 18vw;
+}
+
+#question-form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(231, 231, 231);
+  width: 100vw;
+  height: 100vh;
+}
+
+#question-title-input {
+  background-color: rgba(245, 245, 245, 1);
+}
+
+#question-description-field {
+  background-color: rgba(245, 245, 245, 1);
+  height: 10vh;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+}
+
+#add-question-form {
+  font-weight: 700;
+  font-size: 21px;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+#select-dropdown {
+  width: 19.25vw;
+  margin-left: 0.39vw;
+}
+
+
+#question-form-content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+#ask-cancel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#form-label {
+  font-size: 18px;
+  font-weight: 700;
 }

@@ -21,7 +21,7 @@ router.get('/', async (req, res, next) => {
   })
 
   const users = await User.findAll();
-  console.log(questions)
+
   res.render('index', { users, userId, questions, answers });
 });
 
