@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 
 const { csrfProtection, asyncHandler } = require('../utils')
-const { PostType, Question, Answer } = require('../db/models');
+const { PostType, Question, Answer, User } = require('../db/models');
 
 
 router.get('/', async (req, res) => {
@@ -16,9 +16,14 @@ router.get("/:id(\\d*)", asyncHandler(async (req, res) => {
 
     const topicId = req.params.id;
     const topic = await PostType.findByPk(topicId);
+    const users = await User.findAll()
     const questions = await Question.findAll()
-    const answers = await Answer.findAll()
-    res.render("topic", {topic, questions, answers})
+    const answers = await Answer.findAll(
+      {include: Question,
+
+     })
+     console.log(answers)
+    res.render("topic", {topic, questions, answers, users})
 }))
 
 
