@@ -29,13 +29,13 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
         const question = await Question.create({
             name,
             postTypeId,
-            userId: req.session.user.id,
+            userId: req.session.auth.userId,
             content,
         });
 
-        req.session.save(() => res.redirect(`/questions/${question.id}`));
+        return req.session.save(() => res.redirect(`/questions/${question.id}`));
     };
-    req.session.save(() => res.redirect('/landing'));
+    res.redirect('/welcome');
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {

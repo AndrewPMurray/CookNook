@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     console.log('This is the url!!!!!!', req.originalUrl)
 
     if (!req.session.auth){
-        res.redirect('/landing')
+        res.redirect('/welcome')
         return;
     }
     const { userId } = req.session.auth
