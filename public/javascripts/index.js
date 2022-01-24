@@ -18,9 +18,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
         truncateText(answer);
     });
 
+    
+
     // Possible Code for overlay
     // Generate form when question button clicked
-    const addQuestionButton = document.getElementById('add-question');
+    // const addQuestionButton = document.getElementById('add-question');
 
     // if(addQuestionButton) {
     //     addQuestionButton.addEventListener('click', (e) => {
