@@ -7,6 +7,9 @@ block content
     +sidebar
     div#question-page
       div.question-page-box
+        if question.userId === user.id
+          form(action=`/questions/delete/${question.id}` method='post')
+            button.delete-post Delete Question
         div#user-asked-about
           div(id="user-icon")
           div#text-align-div
@@ -20,6 +23,9 @@ block content
         each answer in answers
           if answer.questionId === questionId
             div#answer-container
+              if answer.userId === user.id
+                form(action=`/comments/delete/${answer.id}` method='post')
+                  button.delete-post Delete Answer
               div#answer-user
                 div(id="answer-user-icon")
                 p(id="answer-username")=answer.User.username
