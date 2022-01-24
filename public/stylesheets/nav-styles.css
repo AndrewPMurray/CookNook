@@ -12,6 +12,7 @@ body {
   height: 6vh;
   position: sticky;
   top: 0vh;
+  z-index: 1000;
 }
 
 #nav-div {
@@ -21,6 +22,7 @@ body {
   align-items: center;
   width: 46vw;
   height: 6vh;
+  z-index: 1000;
 }
 
 #logo {
