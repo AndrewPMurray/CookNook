@@ -1,9 +1,13 @@
 extends layout.pug
 
 block content
-   h1.topic-title Welcome to Topics!
-      div.topics-page
-          each topic in topics
-            div.topic-box
-              div(id=`picture-${topic.id}`)
-              a(href=`/topics/${topic.id}` class='topic-link')=topic.name
+  div#topics-page
+    div#topics-card-container
+      each topic in topics
+        div#card
+          div.banner-box
+            div(id=`banner-${topic.id}`)
+          div#image-block
+            a(href=`/topics/${topic.id}` id=`square-${topic.id}`)
+            a(href=`/topics/${topic.id}` id='topic-link')=topic.name
+            p(id="topic-text") For those looking to find questions about #{topic.name}!

@@ -19,6 +19,7 @@ const searchRouter = require('./routes/search');
 const questionsRouter = require('./routes/questions');
 const topicsRouter = require('./routes/topics')
 const commentsRouter = require('./routes/comments')
+const questionFormRouter = require('./routes/question-form')
 
 const app = express();
 
@@ -50,9 +51,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/welcome', welcomeRouter);
 app.use('/search', searchRouter);
-app.use('/questions', questionsRouter);
+app.use('/question-form', questionFormRouter);
 app.use('/topics', topicsRouter);
 app.use('/comments', commentsRouter);
+app.use('/questions', questionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

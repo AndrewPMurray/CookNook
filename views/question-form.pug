@@ -1,28 +1,28 @@
 extends layout.pug
 
 block content
-  div.question-form-container
-    div.question-form-container-items
-      div.question-form-header
-        p Add Question
-      div.question-form-tips
-        p Tips on getting good answers quickly
-        ul
-          li Make sure your question has not been asked already
-          li Keep your question short and to the point
-          li Double-check grammar and spelling
-      div.question-form-body
-        form(action="/questions" method="post")
-            input(type="hidden" name="_csrf" value=csrfToken)
-            label(for="name") Question Title
-            input(name="name")
-            label(for="content") To allow others to best answer your question, please provide details for your question below:
-            textarea(name="content" placeholder="Start your question with \"What\", \"How\", \"Why\", etc.")
-            label(for="postTypeId") Select Topic for this Question
-            select(name="postTypeId")
-              each postType in postTypes 
-                option(value=postType.id)= postType.name
-            div.space#buttons
-                a(href="/" id="cancel") cancel
-                button(type="submit" id="ask-question-button") Ask Question
-      div.question-form-footer
+  div#question-form-page
+    div.question-form-container
+      div.question-form-container-items
+        div.question-form-header
+          p(id="add-question-form") Add Question
+        div.question-form-tips
+          p.red-bg Tips on getting good answers quickly
+          ul
+            li Make sure your question has not been asked already
+            li Keep your question short and to the point
+            li Double-check grammar and spelling
+        div.question-form-body
+          form(id="question-form-content" action="/questions" method="post")
+              input(type="hidden" name="_csrf" value=csrfToken)
+              label(for="name" id="form-label") Question Title
+              input(id="question-title-input" name="name" placeholder="Enter your question title here...")
+              label(for="content" id="form-label") To allow others to best answer your question, please provide details for your question below:
+              textarea(id="question-description-field" name="content" placeholder="Start your question with \"What\", \"How\", \"Why\", etc.")
+              label(for="postTypeId") Select Topic for this Question
+              select(name="postTypeId" id="select-dropdown")
+                each postType in postTypes
+                  option(value=postType.id)= postType.name
+              div#ask-cancel
+                  a(href="/" id="cancel") cancel
+                  button(type="submit" id="ask-question-button") Ask Question

@@ -1,64 +1,12 @@
 #search-page {
-  background-color: rgb(231, 231, 231);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100vw;
-  padding-top: 2.5vh;
-}
-
-#sidebar-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #EFEFEF;
-  height: 10vh;
-  width: 10vw;
-}
-
-#sidebar {
-  font-family: din-2014;
-  font-weight: 700;
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
+  display:flex;
   justify-content: center;
-  align-items: space-between;
-  width: 9vw;
-  height: 10vh;
-  padding-left: 10px;
-}
-
-#all-btn {
-  font-family: din-2014;
-  font-weight: 700;
-  font-size: 15px;
-  color:rgba(0, 0, 0, 0.5);
-  border: solid rgba(231, 231, 231, 0.5) 1px;
-  text-align: left;
-  margin-top: 0.5vh;
+  align-items: center;
   background-color: rgb(231, 231, 231);
-}
-
-#questions-btn {
-  font-family: din-2014;
-  font-weight: 700;
-  font-size: 15px;
-  color:rgba(0, 0, 0, 0.5);
-  border: solid rgba(231, 231, 231, 0.5) 1px;
-  text-align: left;
-  margin-top: 0.5vh;
-  background-color: rgb(231, 231, 231);
-}
-
-#topics-btn {
-  font-family: din-2014;
-  font-weight: 700;
-  font-size: 15px;
-  color:rgba(0, 0, 0, 0.5);
-  border: solid rgba(231, 231, 231, 0.5) 1px;
-  text-align: left;
-  margin-top: 0.5vh;
-  background-color: rgb(231, 231, 231);
+  width: 100vw;
+  min-height: 100vh;
+  overflow: scroll;
+  padding-top: 1.6vh;
 }
 
 #results-feed {
@@ -66,7 +14,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: center;
 }
 
 #results-container {
@@ -75,8 +23,11 @@
   align-items: center;
   width:20vw;
   height: 3vh;
-  border: solid rgba(0, 0, 0, 0.25) 1px;
-  background-color: rgb(231, 231, 231);
+  margin-bottom: 3px;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #results {
@@ -95,15 +46,17 @@
   padding: 0px 0px 0px 4px;
 }
 
-#topics-container {
+#topics-container-s {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   width:20vw;
-  height: 6vh;
-  border: solid rgba(0, 0, 0, 0.25) 1px;
-  background-color: rgb(231, 231, 231);
+  height: auto;
+  background-color: #F3F3F3;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #topic-name {
@@ -118,7 +71,7 @@
 #vegetable-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic1.jpeg");
+  background-image: url("../images/square/topic1.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -127,7 +80,7 @@
 #tofu-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic2.jpeg");
+  background-image: url("../images/square/topic2.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -136,7 +89,7 @@
 #pasta-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic3.jpeg");
+  background-image: url("../images/square/topic3.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -145,7 +98,7 @@
 #chicken-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic4.jpeg");
+  background-image: url("../images/square/topic4.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -154,7 +107,7 @@
 #beef-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic5.jpeg");
+  background-image: url("../images/square/topic5.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -163,7 +116,7 @@
 #pork-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic6.jpeg");
+  background-image: url("../images/square/topic6.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -172,7 +125,7 @@
 #fish-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic7.jpeg");
+  background-image: url("../images/square/topic7.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -181,7 +134,7 @@
 #shellfish-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic8.jpeg");
+  background-image: url("../images/square/topic8.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -190,7 +143,7 @@
 #grilling-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic9.jpeg");
+  background-image: url("../images/square/topic9.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
@@ -199,20 +152,23 @@
 #dessert-image {
   width: 40px;
   height: 40px;
-  background-image: url("../images/topic10.jpeg");
+  background-image: url("../images/square/topic10.png");
   background-size: contain;
   border-radius: 5px;
   margin-left: 0.25vw;
 }
 
-#questions-container {
+#questions-container-s {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width:20vw;
-  height: 60vh;
-  background-color: rgb(231, 231, 231);
+  height: auto;
+  background-color: #F3F3F3;
   box-sizing: content-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 0px;
 }
 
 #question-div {
@@ -220,9 +176,9 @@
   flex-direction: column;
   align-items: left;
   width: 20vw;
-  height: 7vh;
-  border: solid rgba(0, 0, 0, 0.25) 1px;
-  background-color: rgb(231, 231, 231);
+  height: 8vh;
+  border-bottom: solid rgba(0, 0, 0, 0.25) 1px;
+  background-color: #F3F3F3;
   padding-left: 5px;
   padding-top: 10px;
 }
@@ -238,13 +194,14 @@
 #error {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: space-between;
-  width:20vw;
-  height: 35vh;
-  border: solid rgba(0, 0, 0, 0.25) 1px;
-  background-color: rgb(231, 231, 231);
+  width: 19.9vw;
+  height: auto;
+  background-color: #F3F3F3;
   box-sizing: content-box;
+  overflow: hidden;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #error-msg {
@@ -256,16 +213,18 @@
 }
 
 #broken-plate {
-  width: 20vw;
-  height: 27vh;
-  background-image: url('../images/Depositphotos_8196301_s-2015.jpg');
+  width: 23vw;
+  height: 28vh;
+  background-image: url('../images/no-search-result.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   filter: grayscale(85%);
 }
 
 #question-name {
-  text-decoration: none;
-  color: blue;
+  color: rgba(184, 38, 37, 1);
+}
 
+#nothing {
+  height: 0px;
 }

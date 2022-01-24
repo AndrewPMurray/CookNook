@@ -3,22 +3,20 @@ var router = express.Router();
 const { check, validationResult } = require('express-validator');
 
 const { csrfProtection, asyncHandler } = require('../utils')
-const { Question, User, Answer } = require('../db/models');
+const { Question, User, Answer, Comment, Like, PostType } = require('../db/models');
 
-router.get('/', async(req, res) => {
-  if (!req.session.auth) {
-      res.redirect('/welcome');
-  }
-  const questions = await Question.findAll({
-    include: User,
-    limit: 20,
-    order: [['createdAt', 'DESC']]
-  })
+router.get('/', csrfProtection, asyncHandler(async(req, res) => {
+    if (!req.session.auth) {
+        res.redirect('/welcome');
+    }
+    const postTypes = await PostType.findAll()
 
-  const users = await User.findAll();
-
-  res.render('question-feed', { users, questions });
-});
+    res.render('question-form', {
+        title: "Ask a Question",
+        csrfToken: req.csrfToken(),
+        postTypes,
+    });
+}));
 
 router.post('/', csrfProtection, asyncHandler(async(req, res) => {
     const {
@@ -50,18 +48,18 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     });
 
     const userId = req.session.auth.userId
-    const users = await User.findAll();
 
     const answers = await Answer.findAll({
         include: User
       })
 
+    const comments = await Comment.findAll();
+
     res.render('question-page', {
         questionId,
         question,
         answers,
-        userId,
-        users
+        userId
     });
 
 

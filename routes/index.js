@@ -8,10 +8,10 @@ router.get('/', async (req, res, next) => {
   if (!req.session.auth) {
     return res.redirect('/welcome');
   }
-  
+
   const questions = await Question.findAll({
   include: User,
-  limit: 20
+  limit: 20,
   order: [['createdAt', 'DESC']]
   })
 
@@ -21,7 +21,7 @@ router.get('/', async (req, res, next) => {
   })
 
   const users = await User.findAll();
-  console.log(questions)
+ 
   res.render('index', {users, userId, questions, answers});
 });
 

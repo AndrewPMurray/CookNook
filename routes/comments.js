@@ -8,7 +8,6 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
     const {questionId, comment} = req.body;
-    console.log('This is the url!!!!!!', req.originalUrl)
 
     if (!req.session.auth){
         res.redirect('/landing')
