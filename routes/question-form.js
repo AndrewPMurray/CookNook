@@ -7,8 +7,9 @@ const { Question, User, Answer, Comment, Like, PostType } = require('../db/model
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
     if (!req.session.auth) {
-        res.redirect('/welcome');
+        return res.redirect('/welcome');
     }
+
     const postTypes = await PostType.findAll()
 
     res.render('question-form', {
@@ -39,6 +40,10 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
 }));
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+    if (!req.session.auth) {
+        return res.redirect('/welcome');
+    }
+
     const questionId = parseInt(req.params.id, 10);
     const question = await Question.findOne({
         include: User,
