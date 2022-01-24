@@ -1,0 +1,209 @@
+* {
+    font-family: din-2014;
+}
+
+#homepage {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    background-color: rgb(231, 231, 231);
+    width: 100vw;
+    min-height: 100vh;
+    overflow: scroll;
+    padding-top: 1.6vh;
+}
+
+#user-asked-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3vh;
+    width: 18vw;
+}
+
+#user-icon {
+    background-image: url('../Brand Assets/icons/CookNook - Profile Icon-14.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+
+#text-align-div {
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;;
+}
+
+#username {
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+#asked {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#q-title {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#q-content {
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+#posts-container {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: auto;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 10px;
+    align-items: center;
+
+}
+
+#posts {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: left;
+    margin-bottom: 10px;
+    border: 1px solid rgb(231, 231, 231);
+    width: 20vw;
+    height: auto;
+    background-color: #F3F3F3;
+    padding: 10px 10px
+}
+
+#q-title {
+    color: red;
+    opacity: 50%;
+}
+
+#asked {
+    color: black;
+}
+
+#q-title:hover {
+    opacity: 100%;
+}
+
+#answer-user-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 20vw;
+    border: 2px solid rgb(231, 231, 231);
+}
+
+#answer-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3vh;
+    width: 18vw;
+    border-left: 4px solid rgb(220, 220, 220);
+    background-color: rgb(235, 235, 235);
+    padding-left: 5px;
+    margin-top: 5px;
+}
+
+#answer-user-icon {
+    background-image: url('../Brand Assets/icons/CookNook - Profile Icon-14.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+#answer-username {
+    font-weight: 700;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#answered {
+    font-family: din-2014;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#answer-text {
+    margin-top: 10px;
+    padding-left: 7px;
+    font-weight: 700;
+
+}
+
+#add-answer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 18vw;
+    height: auto;
+    border-top: 1px solid rgb(220, 220, 220);
+    padding-top: 15px;
+}
+
+.add-comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 15vw;
+
+  }
+
+.comment-value {
+    resize: none;
+    border-radius: 5px;
+    width: 13.2vw;
+    height: 2vh;
+    border-color: rgba(0, 0, 0, 0.1)
+}
+
+.comment-value:focus {
+    height: 4vh;
+}
+
+#answer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: rgba(0, 0, 0, 0);
+  border-radius: 7px;
+  height: 2vh;
+  width: 3vw;
+  color: white;
+  background-color: rgba(184, 38, 37, 0.5);
+}
+
+#answer-btn:hover {
+    background-color: rgba(184, 38, 37, 1);
+}
+
+
+.delete-post {
+
+}
+
+.answer-box {
+
+}
+
+
+#spacer {
+    width: 8.85vw;
+    height: 1px;
+    border-top: #DDDDDD 1px solid;
+}

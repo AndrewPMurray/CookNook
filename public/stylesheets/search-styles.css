@@ -4,7 +4,6 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100vw;
-  height: 100vh;
   padding-top: 2.5vh;
 }
 
@@ -58,7 +57,7 @@
   color:rgba(0, 0, 0, 0.5);
   border: solid rgba(231, 231, 231, 0.5) 1px;
   text-align: left;
-  margin-top: 1vh;
+  margin-top: 0.5vh;
   background-color: rgb(231, 231, 231);
 }
 
@@ -218,12 +217,14 @@
 
 #question-div {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  width:20vw;
-  height: 3vh;
+  flex-direction: column;
+  align-items: left;
+  width: 20vw;
+  height: 7vh;
   border: solid rgba(0, 0, 0, 0.25) 1px;
   background-color: rgb(231, 231, 231);
+  padding-left: 5px;
+  padding-top: 10px;
 }
 
 #quesiton-name {
@@ -261,4 +262,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   filter: grayscale(85%);
+}
+
+#question-name {
+  text-decoration: none;
+  color: blue;
+
 }

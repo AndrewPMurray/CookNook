@@ -44,9 +44,10 @@ block content
                         a#dessert-image
                         a(href="/topics/10" id="topic-name") Dessert
             div#questions-container
-                each question in qNames
+                each question in qData
                     div#question-div
-                        a(id="question-name")=question
+                        a(href=`/questions/${question.id}` id="question-name")=question.name
+                        p(id="question-text") #{question.content}
                 else
                     div#error
                         p(id="error-msg") Sorry... we couldn't find any results.

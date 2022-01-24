@@ -5,8 +5,6 @@ const { Question, PostType }= require("../db/models")
 
 const { csrfProtection, asyncHandler } = require('../utils');
 
-//Search
-
 router.get('/', (req, res) => {
     res.render('search');
 });
@@ -18,7 +16,7 @@ async function searchQuestions(pattern) {
 
     for(let i = 0; i < questions.length - 1; i++) {
         let question = questions[i];
-        if(question.name.includes(pattern) || question.content.includes(pattern)) {
+        if(question.name.toLowerCase().includes(pattern) || question.content.toLowerCase().includes(pattern)) {
             matches.push(question);
         };
     };
@@ -37,7 +35,7 @@ async function searchTopics(pattern) {
 
     for(let i = 0; i < topics.length - 1; i++) {
         let topic = topics[i];
-        if(topic.name === pattern) {
+        if(topic.name.toLowerCase() === pattern) {
             matches.push(topic);
         };
     };
@@ -50,7 +48,8 @@ async function searchTopics(pattern) {
 
 router.post('/', asyncHandler(async(req, res) => {
     const { q } = req.body;
-    const searchWordsArr = q.slice(0, q.length).split(' ');
+    const searchWord = q.toLowerCase();
+    const searchWordsArr = searchWord.slice(0, searchWord.length).split(' ');
 
     let questions;
     let topics;
@@ -60,12 +59,15 @@ router.post('/', asyncHandler(async(req, res) => {
         topics = await searchTopics(word)
     }));
 
-    let qNames = [];
-    let qContents = [];
+    let qData = [];
 
     questions.forEach(question => {
-        qNames.push(question.dataValues.name);
-        qContents.push(question.dataValues.content);
+        const questionInfo = {
+            name: question.dataValues.name,
+            id: question.dataValues.id,
+            content: question.dataValues.content
+        }
+        qData.push(questionInfo);
     });
 
     let topicNames = [];
@@ -73,12 +75,7 @@ router.post('/', asyncHandler(async(req, res) => {
         topicNames.push(topic.dataValues.name.toLowerCase());
     });
 
-    console.log(q)
-    console.log(qNames)
-    console.log(qContents)
-    console.log(topicNames)
-
-    res.render('search', { q, qNames, qContents, topicNames })
+    res.render('search', { q, qData, topicNames })
 }));
 
 
