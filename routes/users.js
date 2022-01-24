@@ -17,7 +17,7 @@ const userValidators = [
       return User.findOne({ where: { username: value } })
         .then((user) => {
           if (user) {
-            return Promise.reject('The provided username is already in user by another account');
+            return Promise.reject('The provided username is already in use by another account');
           }
         })
     }),
