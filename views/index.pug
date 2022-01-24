@@ -29,7 +29,7 @@ block content
                     div(id="answer-user-icon")
                     p(id="answer-username")=answer.User.username
                     p(id="answered") answered
-                  p(id="answer-text")=answer.content
+                  p.answer(id="answer-text")=answer.content
             div#add-answer
               div(id="user-icon")
               form(action='/comments', method='post').add-comment
