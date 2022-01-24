@@ -14,7 +14,7 @@ const store = new SequelizeStore({ db: sequelize });
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const landingRouter = require('./routes/landing');
+const welcomeRouter = require('./routes/welcome');
 const searchRouter = require('./routes/search');
 const questionsRouter = require('./routes/questions');
 const topicsRouter = require('./routes/topics')
@@ -48,7 +48,7 @@ store.sync();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/landing', landingRouter);
+app.use('/welcome', welcomeRouter);
 app.use('/search', searchRouter);
 app.use('/questions', questionsRouter);
 app.use('/topics', topicsRouter);

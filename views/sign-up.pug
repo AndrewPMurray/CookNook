@@ -1,27 +1,30 @@
-extends signup-login-layout.pug
+extends welcome.pug
 
-block head
-  body.outer-class
-      form(action='/users' method='post')#signup-form
-        .error-messages
-          ul.error-list
+block content
+  div.form-container
+    form(action='/users' method='post')#signup-form
+      .error-messages
+        ul#error-list
             each error in errors
-              li(class='errors')=error
-        div.form-items
-          div#logo-img
-          p#signup-words Sign Up
-          input(name='_csrf' type='hidden' value=csrfToken)
-          label User Name:
-          input(type='text' name='username' value=username placeholder='Your username')
-          div.space
-          label Email:
-          input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
-          div.space
-          label Password:
-          input(type='password' name='password' placeholder='Your password')
-          div.space
-          label Confirm Password:
-          input(type='password' name='confirmedPassword' placeholder='Your password')
+              li(class='signup-errors')=error
+      div.form-items
+        div#logo-img-signup
+        p#signup-words Sign Up
+        input(name='_csrf' type='hidden' value=csrfToken)
+        label User Name:
+        input(type='text' name='username' value=username placeholder='Your username')
+        div.space
+        label Email:
+        input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
+        div.space
+        label Password:
+        input(type='password' name='password' placeholder='Your password')
+        div.space
+        label Confirm Password:
+        input(type='password' name='confirmedPassword' placeholder='Your password')
+        div#buttons-container
           div.space#buttons
-            button(type='submit').signup-button Signup
-            a(href='/landing' class='login-button') Already have an account?
+            a(href='/welcome' class='login-button') Already have an account?
+            button(type='submit').signup-login-button Signup
+          div.space#demo
+            a(href='/welcome/demo' class='demo-button') Demo

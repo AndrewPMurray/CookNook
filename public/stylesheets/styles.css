@@ -1,3 +1,7 @@
+body {
+  overflow: scroll;
+}
+
 #greeting {
 position: absolute;
 margin-left: 5px;
@@ -58,30 +62,12 @@ html {
   padding: 0 10px
 }
 
-#nav {
-  z-index: 2;
-}
-
-body {
-  overflow: scroll;
-}
-
-  #question-page {
+#question-page {
     background-color: rgb(231, 231, 231);
-  }
+}
 
 .question-content {
   padding: 0 10px;
-}
-
-#main-nav-bar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-  background-color: white;
 }
 
 .add-comment {
@@ -120,8 +106,6 @@ body {
   margin: auto;
 }
 
-
-
 .question-author {
   font-weight: 700;
 }
@@ -159,237 +143,8 @@ body {
   color: white;
 }
 
-#nav-signup {
-  margin-right: 20px;
-  height: 50px;
-  width: 90px;
-  border-radius: 30px;
-  border: 1px solid white;
-  background-color: rgba(184, 38, 37);
-  color: white;
-}
-
-#nav-login {
-  margin-right: 20px;
-  height: 50px;
-  width: 90px;
-  border-radius: 30px;
-  border: 1px solid rgba(184, 38, 37);
-  background-color: white;
-  color: rgb(184, 38, 37);
-}
-
-#right-nav {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-
-#logo-img {
-  background-image: url("/public/images/CookNook\ Logo\ -\ Red.png");
-}
-
 #add-question {
   margin-right: 60px;
-}
-
-::placeholder {
-    padding-left: 3px;
-    font-family: Din-medium;
-}
-
-.login-button {
-  display: flex;
-  align-items: center;
-  height: 30px;
-  justify-content: center;
-  width: auto;
-  color: rgba(184, 38, 37)
-}
-
-#buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-input {
-    border-radius: 5px;
-    border: 1px solid grey;
-    height: 30px;
-}
-
-.outer-class {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../images/pexels-roman-odintsov-4551832.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-#logo-img {
-    background-image: url("../images/CookNook\ Logo\ -\ Red.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 380px;
-    height: 100px;
-}
-
-#login-words {
-  color:grey;
-  padding-bottom: 4px;
-  border-bottom: 1px grey solid;
-  font-family: Din-medium;
-}
-
-#login-form {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  width: 800px;
-  height: 500px;
-  padding: 20px 30px;
-  border-radius: 40px;
-  margin-top: 100px;
-}
-
-#signup-words {
-    color:grey;
-    padding-bottom: 4px;
-    border-bottom: 1px grey solid;
-    font-family: Din-medium;
-}
-
-.signup-button {
-  background-color: rgba(184, 38, 37, 0.5);
-  border-radius: 10px;
-  height: 30px;
-  width: 80px;
-  font-family: sans-serif;
-  color: white;
-  border: 1px solid rgba(184, 38, 37, 0.5);
-  transition-duration: .5s;
-  font-family: Din-medium;
-}
-
-.signup-button:hover {
-  color: #b82525;
-  background-color: rgba(184, 38, 37);
-  border: 1px solid rgba(184, 38, 37);
-  color: white;
-}
-
-.form-items {
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid rgba(131, 131, 131, 0.87);
-  padding-left: 20px;
-  gap: 3px;
-  width: 300px;
-  font-family: Din-medium;
-  margin-top: 10px;
-  width: auto;
-}
-
-.form-items-login {
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid rgba(131, 131, 131, 0.87);
-  padding-left: 20px;
-  justify-content: center;
-  gap: 3px;
-  width: 300px;
-  font-family: Din-medium;
-  margin-top: 10px;
-  width: auto;
-}
-
-.form-items > a {
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-.space {
-  margin: 5px;
-}
-
-.errors {
-  color:rgba(184, 38, 37);
-  margin-top: 3px;
-}
-
-.landing-container {
-  display: flex;
-  background-color: white;
-  justify-content: space-around;
-  flex-direction: column;
-  height: 550px;
-  width: 860px;
-  margin-top: 265px;
-  align-items: center;
-  border-radius: 30px;
-}
-
-.error-messages {
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#signup-form {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  width: 800px;
-  height: 500px;
-  padding: 20px 30px;
-  border-radius: 40px;
-  margin-top: 100px;
-}
-
-.signup-div {
-  width: 400px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#placeholder {
-  width: 400px;
-  height: 200px;
-  background-image: url("../images/CookNook-Placeholder.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.login {
-  width: 400px;
-  height: 300px;
-  background-color: transparent;
-}
-
-.pseudo-login {
-  width: 400px;
-  height: 300px;
-  display: hidden;
-}
-
-.signup-login-div {
-  display: flex;
-  flex-direction: row;
-  align-items: space-around;
-}
-
-.signup {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 10px;
-  margin-top: -27px;
 }
 
 .question-form-container {

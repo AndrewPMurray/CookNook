@@ -1,23 +1,24 @@
-extends signup-login-layout.pug
+extends welcome.pug
 
-block head
-  body.outer-class
-    div.form-container
-      form(action='/landing' method='post')#login-form
-        .error-messages
-          ul.error-list
-            each error in errors
-              li(class='errors')=error
-        div.form-items-login
-          div#logo-img
-          p#login-words Login
-          input(name='_csrf' type='hidden' value=csrfToken)
-          label Email:
-          input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
-          div.space
-          label Password:
-          input(type='password' name='password' placeholder='Your password')
+block content
+  div.form-container
+    form(action='/welcome' method='post')#login-form
+      .error-messages
+        ul#error-list
+          each error in errors
+            li(class='errors')=error
+      div.form-items-login
+        div#logo-img
+        p#login-words Login
+        input(name='_csrf' type='hidden' value=csrfToken)
+        label Email:
+        input(type='email' name='emailAddress' value=emailAddress placeholder='Your email')
+        div.space
+        label Password:
+        input(type='password' name='password' placeholder='Your password')
+        div#buttons-container
           div.space#buttons
-            button(type='submit').signup-button Login
-            a(href='/users' class='login-button') Dont have an account?
-            a(href='/landing/demo' class='login-button') Demo User
+            a(href='/users' class='login-button') Create an account
+            button(type='submit').signup-login-button Login
+          div.space#demo
+            a(href='/welcome/demo' class='demo-button').demo-button Demo

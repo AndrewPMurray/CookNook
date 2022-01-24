@@ -1,0 +1,55 @@
+* {
+    font-family: din-2014;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    width: 35vw;
+    height: 50vh;
+    border-radius: 40px;
+}
+
+.form-items {
+    display: flex;
+    flex-direction: column;
+    border-left: 4px dashed rgba(131, 131, 131, 0.5);
+    padding-left: 1.25vw;
+    justify-content: center;
+    align-items: space-between;
+    width: 13.5vw;
+    height: 50vh;
+}
+
+#logo-img-signup {
+    width: 15vw;
+    height: 10vh;
+    background-image: url("../Brand Assets/logo/CookNook Logo - Red.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 0.5vh;
+}
+
+.signup-errors {
+    color:rgba(184, 38, 37);
+    margin-top: 5.7vh;
+    margin-bottom: -4vh;
+    list-style-type: square;
+}
+
+
+#signup-words {
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    padding-bottom: 4px;
+    border-bottom: 1px grey solid;
+    width: 14.75vw;
+    margin-top: -1vh;
+}
+
+.space {
+  margin: 5px;
+}

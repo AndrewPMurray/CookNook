@@ -1,0 +1,192 @@
+#home-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    height: 0px;
+    width: 9vw;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 8vh;
+    left: 29.75vw;
+    border: #DDDDDD solid 1px;
+}
+
+#user-greeting {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    font-family: din-2014;
+    font-weight: 700;
+    font-size: 18px;
+    color:rgb(0, 0, 0);
+    text-align: left;
+    background-color: #EFEFEF;
+    width: 8.85vw;
+    height: 2vh;
+    padding-top: 0.5vh;
+    padding-left: 0.3vw;
+    margin-bottom: 0.5vh;
+}
+
+#spacer {
+    width: 8.85vw;
+    height: 1px;
+    border-top: #DDDDDD 1px solid;
+}
+
+#sidebar-demo {
+    display: flex;
+    flex-direction: column;
+    width: 8.85vw;
+    height: 40vh;
+    background-color: #EFEFEF;
+}
+
+#browse-topics {
+    width: 8.85vw;
+    height: 1vh;
+    color:rgb(0, 0, 0);
+    background-color: #EFEFEF;
+    font-family: din-2014;
+    font-weight: 700;
+    font-size: 15px;
+    padding-left: 0.3vw;
+}
+
+#topics-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 8.85vw;
+    height: 3.5vh;
+    border: solid #DDDDDD 0.5px;
+    background-color: rgba(255, 255, 255, 0.25);
+    gap: 0.25vw;
+}
+
+#topics-display:hover {
+    background-color: #DDDDDD;
+    cursor: pointer;
+}
+
+#topics-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width:20vw;
+    height: 6vh;
+    border: solid rgba(0, 0, 0, 0.25) 1px;
+    background-color: rgb(231, 231, 231);
+}
+
+#topic-name-link {
+    font-family: din-2014;
+    font-weight: 700;
+    font-size: 15px;
+    color:rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    text-align: center;
+}
+
+#vegetables {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#tofu {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#pasta {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic3.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#chicken {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#beef {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic5.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#pork {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic6.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#fish {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic7.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#shellfish {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic8.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#grilling {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic9.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
+
+#dessert {
+    width: 25px;
+    height: 25px;
+    background-image: url("../images/square/topic10.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25%;
+    margin-left: 0.25vw;
+}
