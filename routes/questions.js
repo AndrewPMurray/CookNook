@@ -20,27 +20,32 @@ router.get('/', async(req, res) => {
   res.render('question-feed', { users, questions });
 });
 
-router.post('/', csrfProtection, asyncHandler(async(req, res) => {
+router.post('/', csrfProtection, asyncHandler(async (req, res) => {
+    if (!req.session.auth) {
+        return res.redirect('/welcome');
+    }
+
     const {
         name,
         postTypeId,
         content,
     } = req.body
 
-    if (req.session.auth) {
-        const question = await Question.create({
-            name,
-            postTypeId,
-            userId: req.session.user.id,
-            content,
-        });
+    const question = await Question.create({
+        name,
+        postTypeId,
+        userId: req.session.auth.userId,
+        content,
+    });
+    return req.session.save(() => res.redirect(`/questions/${question.id}`));
 
-        req.session.save(() => res.redirect(`/questions/${question.id}`));
-    };
-    req.session.save(() => res.redirect('/welcome'));
 }));
 
-router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
+router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
+    if (!req.session.auth) {
+        return res.redirect('/welcome');
+    }
+
     const questionId = parseInt(req.params.id, 10);
     const question = await Question.findOne({
         include: User,
@@ -67,7 +72,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
 
 }));
 
-router.post('/delete/:id(\\d+)', async(req, res) => {
+router.post('/delete/:id(\\d+)', async (req, res) => {
     const questionId = parseInt(req.params.id, 10);
 
     const answers = await Answer.findAll({

@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
     const {questionId, comment} = req.body;
 
     if (!req.session.auth){
-        res.redirect('/landing')
+        res.redirect('/welcome')
         return;
     }
     const { userId } = req.session.auth

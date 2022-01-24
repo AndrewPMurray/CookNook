@@ -281,3 +281,40 @@ z-index: 20;
 #topic-link:hover {
   text-decoration: underline;
 }
+
+.topic-title {
+    margin-top: 40px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+.topics-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+    margin: auto;
+  }
+
+  .topics-box {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+  }
+
+  .topic-title {
+    margin-top: 40px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }

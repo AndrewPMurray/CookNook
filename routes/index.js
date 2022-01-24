@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {Question, User, Answer} = require('../db/models')
+const { Question, User, Answer } = require('../db/models')
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
@@ -10,10 +10,10 @@ router.get('/', async (req, res, next) => {
   }
 
   const questions = await Question.findAll({
-  include: User,
-  limit: 20,
-  order: [['createdAt', 'DESC']]
-  })
+    include: User,
+    limit: 20,
+    order: [['createdAt', 'DESC']]
+  });
 
   const userId = req.session.auth.userId
   const answers = await Answer.findAll({
@@ -21,8 +21,8 @@ router.get('/', async (req, res, next) => {
   })
 
   const users = await User.findAll();
- 
-  res.render('index', {users, userId, questions, answers});
+
+  res.render('index', { users, userId, questions, answers });
 });
 
 module.exports = router;
