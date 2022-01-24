@@ -115,8 +115,8 @@ html {
   margin-left: 150px;
   color: rgb(184, 38, 37);
   cursor: pointer;
-  background-color: white;
-  border: 1px solid white;
+  background-color: transparent;
+  border: none;
   border-radius: 5px;
 }
 

@@ -8,10 +8,10 @@ block content
     div#homepage
       div#posts-container
         each question in questions
+          if question.userId === user.id
+            form(action=`/questions/delete/${question.id}` method='post')
+              button.delete-post Delete Question
           div#posts
-            if question.userId === user.id
-              form(action=`/questions/delete/${question.id}` method='post')
-                button.delete-post Delete Question
             div#user-asked-about
               div(id="user-icon")
               div#text-align-div
