@@ -39,37 +39,6 @@ router.post('/', csrfProtection, asyncHandler(async(req, res) => {
     req.session.save(() => res.redirect('/welcome'));
 }));
 
-router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
-    if (!req.session.auth) {
-        return res.redirect('/welcome');
-    }
-
-    const questionId = parseInt(req.params.id, 10);
-    const question = await Question.findOne({
-        include: User,
-        where: {
-            id: questionId
-        }
-    });
-
-    const userId = req.session.auth.userId
-
-    const answers = await Answer.findAll({
-        include: User
-      })
-
-    const comments = await Comment.findAll();
-
-    res.render('question-page', {
-        questionId,
-        question,
-        answers,
-        userId
-    });
-
-
-}));
-
 router.post('/delete/:id(\\d+)', async(req, res) => {
     const questionId = parseInt(req.params.id, 10);
 
