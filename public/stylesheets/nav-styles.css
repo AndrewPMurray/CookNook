@@ -9,7 +9,7 @@ body {
   align-items: center;
   background-color: rgba(184, 38, 37);
   width: 100vw;
-  height: 6vh;
+  height: 80px;
   position: sticky;
   top: 0vh;
   z-index: 21;
@@ -20,8 +20,8 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 50vw;
-  height: 6vh;
+  width: 75vw;
+  height: 80px;
   z-index: 21;
 }
 
@@ -29,9 +29,11 @@ body {
   background-image: url("../Brand Assets/logo/CookNook Logo - White.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 10vw;
-  height: 5vh;
+  width: 200px;
+  height: 80px;
   z-index: 21;
+  margin-top: 40px;
+  margin-right: 50px;
 }
 
 #questions {
@@ -44,6 +46,7 @@ body {
   background-color: rgba(1, 1, 1, 0);
   text-decoration: none;
   z-index: 21;
+  margin-right: 20px;
 }
 
 #topics {
@@ -55,13 +58,14 @@ body {
   color: white;
   background-color: rgba(1, 1, 1, 0);
   text-decoration: none;
+  margin-right: 20px;
 }
 
 #form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 3vh;
+  height: 80px;
   width: 13vw;
 }
 
@@ -73,8 +77,9 @@ body {
   background-color:rgb(184, 38, 37);
   border: 0.25px solid white;
   border-radius: 0.5rem;
-  height: 3vh;
+  height: 45px;
   width: 15vw;
+  margin-right: 20px;
 }
 
 #search-icon {
@@ -151,6 +156,7 @@ body {
   text-decoration: none;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 #add-question {
@@ -161,9 +167,11 @@ body {
   text-decoration: none;
   color: white;
   background-color:rgba(184, 38, 37, 1) !important;
-  border: 5px solid white;
+  border: 1px solid white;
   text-align: center !important;
-  width: 4vw !important;
-  height: 3vh !important;
+  width: 150px !important;
+  height: 40px;
   border-radius: 8px !important;
+  cursor: pointer;
+  margin-right: 20px;
 }

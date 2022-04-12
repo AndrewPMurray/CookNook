@@ -7,8 +7,8 @@
   justify-content: center;
   align-items: center;
   background-image: url("../Brand Assets/images/CookNook - bg.jpg");
-  background-size: cover;
   background-repeat: no-repeat;
+  height: 95vh;
 }
 
 .form-container {
@@ -17,8 +17,8 @@
   justify-content: space-around;
   align-items: center;
   height: 50vh;
-  width: 35vw;
-  margin-top: 20vh;;
+  min-height: 450px;
+  width: 800px;
   border-radius: 30px;
 }
 
@@ -27,8 +27,9 @@
   flex-direction: row;
   justify-content: space-around;
   background-color: white;
-  width: 35vw;
-  height: 50vh;
+  width: 800px;
+  height: 680px;
+  min-height: 450px;
   border-radius: 40px;
 }
 
@@ -40,13 +41,20 @@
   align-items: center;
 }
 
+#welcome-text {
+  color: gray;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 45px;
+}
+
 #error-list {
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 10vw;
-  height: 30vh;
-  background-image: url('../Brand Assets/images/Notebook.png');
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: -2vw;
@@ -61,8 +69,7 @@
 }
 
 #logo-img {
-  width: 15vw;
-  height: 10vh;
+  height: 100px;
   background-image: url("../Brand Assets/logo/CookNook Logo - Red.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -77,8 +84,8 @@
   justify-content: center;
   align-items: space-between;
   gap: 0.25vh;
-  width: 13.5vw;
-  height: 50vh;
+  width: 200px;
+  height: 100%;
 }
 
 .login-button {
@@ -93,7 +100,7 @@
 #buttons {
   display: flex;
   flex-direction: row;
-  gap: 1vw;
+  gap: 15px;
   justify-content: space-between;
   align-items: baseline;
 }
@@ -102,7 +109,7 @@ input {
   border-radius: 5px;
   border: 1px solid grey;
   height: 2vh;
-  width: 14.5vw;
+  width: 230px;
   padding-left: 0.25vw;
   margin-bottom: 1vh;
 }
@@ -113,7 +120,7 @@ input {
   font-size: 18px;
   padding-bottom: 4px;
   border-bottom: 1px grey solid;
-  width: 14.75vw;
+  width: 230px;
   margin-top: -1vh;
 }
 
@@ -165,7 +172,7 @@ input {
 }
 
 #buttons-container {
-  width: 15vw;
+  width: 230px;
   height: 7vh;
   display: flex;
   flex-direction: column;
@@ -185,8 +192,8 @@ justify-content: flex-end;
   align-items: center;;
   background-color: rgba(247, 147, 30, 0.75);
   border-radius: 10px;
-  height: 30px;
-  width: 80px;
+  height: 28px;
+  width: 78px;
   color: white;
   border: 1px solid rgba(184, 38, 37, 0);
   transition-duration: .15s;

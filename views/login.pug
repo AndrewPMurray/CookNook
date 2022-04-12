@@ -3,10 +3,12 @@ extends welcome.pug
 block content
   div.form-container
     form(action='/welcome' method='post')#login-form
-      .error-messages
-        ul#error-list
-          each error in errors
-            li(class='errors')=error
+      div#error-div
+        p#welcome-text Welcome!
+        .error-messages
+          ul#error-list
+            each error in errors
+              li(class='errors')=error
       div.form-items-login
         div#logo-img
         p#login-words Login
