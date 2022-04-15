@@ -25,7 +25,7 @@ block content
             div#answer-container
               if answer.userId === user.id
                 form(action=`/comments/delete/${answer.id}` method='post')
-                  button.delete-post Delete Answer
+                  button.delete-answer Delete Answer
               div#answer-user
                 div(id="answer-user-icon")
                 p(id="answer-username")=answer.User.username

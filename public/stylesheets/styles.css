@@ -49,6 +49,10 @@ html {
   color: rgb(99, 98, 98)
 }
 
+#answer-container {
+  position: relative;
+}
+
 .answer-box {
   border-top: 1px solid grey;
   width: 100%;
@@ -63,6 +67,7 @@ html {
   background-color: rgb(231, 231, 231);
   width: 100vw;
   height: 100vh;
+  padding-left: 200px;
 }
 
 .question-content {
@@ -111,7 +116,19 @@ html {
 
 .delete-post {
   position: absolute;
-  margin-left: 150px;
+  right: 5px;
+  top: 5px;
+  color: rgb(184, 38, 37);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+}
+
+.delete-answer {
+  position: absolute;
+  right: 5px;
+  top: 10px;
   color: rgb(184, 38, 37);
   cursor: pointer;
   background-color: transparent;
@@ -124,14 +141,13 @@ html {
   flex-direction: column;
   border-radius: 10px;
   align-items: flex-start;
-  justify-content: center;
   border: 1px solid rgb(231, 231, 231);
-  width: 20vw;
+  min-width: 300px;
+  width: 50vw;
   height: auto;
   background-color: #F3F3F3;
   padding: 10px 10px;
-  margin-top: 1.75vh;
-  padding-left: 15px;
+  position: relative;
 }
 
 .question-form-container {
@@ -139,7 +155,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 20vw;
+  width: 500px;
   height: auto;
   margin-top: 4vh;
 }
@@ -149,7 +165,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20vw;
+  width: 500px;
   background-color: white;
   border-radius: 15px;
 }
@@ -163,8 +179,8 @@ html {
 
 .question-form-tips {
   background-color: rgba(184, 38, 37, 0.5);
-  width: 19.25vw;
-  height: 12.5vh;
+  width: 500px;
+  height: 300px;
 }
 
 .question-form-tips p {
@@ -197,7 +213,7 @@ html {
 .question-form-header {
   padding-bottom: -5px;
   border-bottom: 1px solid rgb(184, 38, 37);
-  width: 19.25vw;
+  width: 500px;
   align-content: center;
 }
 
@@ -267,7 +283,8 @@ html {
   text-decoration: none;
   margin-bottom: 5px;
   margin-top: 0px;
-  width: 18vw;
+  width: 45vw;
+  min-width: 240px;
 }
 
 #question-form-page {

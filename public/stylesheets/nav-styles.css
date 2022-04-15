@@ -20,7 +20,7 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 75vw;
+  width: 80vw;
   height: 80px;
   z-index: 21;
 }
@@ -29,7 +29,7 @@ body {
   background-image: url("../Brand Assets/logo/CookNook Logo - White.png");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 200px;
+  min-width: 200px;
   height: 80px;
   z-index: 21;
   margin-top: 40px;
@@ -78,23 +78,26 @@ body {
   border: 0.25px solid white;
   border-radius: 0.5rem;
   height: 45px;
-  width: 15vw;
+  min-width: 200px;
   margin-right: 20px;
+  position: relative;
 }
 
 #search-icon {
+  position: absolute;
+  left: 10px;
   width: 20px;
   height: 20px;
   background-image: url("../Brand Assets/icons/CookNook\ -\ Magnify\ Icon-14.png");
   background-repeat: no-repeat;
   background-size: cover;
-  margin-left: 10px;
-  padding-right: 20px;
 }
 
 #search-input{
+  position: absolute;
+  right: -10px;
   height:40px;
-  width:350px;
+  min-width:150px;
   background-color:rgba(1, 1, 1, 0);
   border: 0px;
   color: white;
@@ -170,6 +173,7 @@ body {
   border: 1px solid white;
   text-align: center !important;
   width: 150px !important;
+  min-width: 150px;
   height: 40px;
   border-radius: 8px !important;
   cursor: pointer;

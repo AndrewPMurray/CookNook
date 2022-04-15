@@ -3,11 +3,10 @@
     flex-direction: column;
     background-color: #EFEFEF;
     height: 0px;
-    width: 9vw;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 8vh;
-    left: 29.75vw;
+    min-width: 150px;
+    position: fixed;
+    top: 100px;
+    left: 30px;
     border: #DDDDDD solid 1px;
 }
 
@@ -22,15 +21,13 @@
     color:rgb(0, 0, 0);
     text-align: left;
     background-color: #EFEFEF;
-    width: 8.85vw;
-    height: 2vh;
-    padding-top: 0.5vh;
-    padding-left: 0.3vw;
-    margin-bottom: 0.5vh;
+    padding-top: 10px;
+    padding-left: 5px;
+    margin-bottom: 10px;
 }
 
 #spacer {
-    width: 8.85vw;
+    width: 100px;
     height: 1px;
     border-top: #DDDDDD 1px solid;
 }
@@ -38,16 +35,14 @@
 #sidebar-demo {
     display: flex;
     flex-direction: column;
-    width: 8.85vw;
-    height: 40vh;
+    width: 150px;
+    height: 350px;
     background-color: #EFEFEF;
 }
 
 #browse-topics {
-    width: 8.85vw;
     height: 1vh;
     color:rgb(0, 0, 0);
-    background-color: #EFEFEF;
     font-family: din-2014;
     font-weight: 700;
     font-size: 15px;
@@ -59,8 +54,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    width: 8.85vw;
-    height: 3.5vh;
+    width: 150px;
+    height: 50px;
     border: solid #DDDDDD 0.5px;
     background-color: rgba(255, 255, 255, 0.25);
     gap: 0.25vw;
@@ -77,7 +72,7 @@
     align-items: center;
     justify-content: flex-start;
     width:20vw;
-    height: 6vh;
+    height: 50px;
     border: solid rgba(0, 0, 0, 0.25) 1px;
     background-color: rgb(231, 231, 231);
 }

@@ -17,7 +17,8 @@
     margin-top: 20vh;
     margin-bottom: 10px;
     border: 1px solid rgb(231, 231, 231);
-    width: 20vw;
+    min-width: 300px;
+    width: 50vw;
     height: auto;
     background-color: #F3F3F3;
     padding: 10px 20px;
