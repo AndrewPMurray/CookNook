@@ -1,12 +1,12 @@
 # CookNook
-<img src="public/img/homePage.png" >
+<img src="public/images/homePage.png" >
   CookNook is a clone of Quora with an emphasis on cooking and food! Users are able to signup and login, create questions, answer questions, see questions sorted by topic and search for questions! 
   
 # Technology Used
 <p float="left">
-<img src="public/img/express.png" width="100">
-<img src="public/img/JS.png" width="100">
-<img src="public/img/pug.png" width="100">
+<img src="public/images/express.png" width="100">
+<img src="public/images/JS.png" width="100">
+<img src="public/images/pug.png" width="100">
 </p>
 
 # To get started:
@@ -41,12 +41,12 @@
 # Features
 
 # Questions
-<img src="public/img/questions.png" >
+<img src="public/images/questions.png" >
 
 Once users are logged in they are redirected to a feed of all the questions sorted by the most recently asked. From the nav bar they can create questions and search for them. They can also answer questions either on the feed or from the individual question page. 
 
 # Topics
-<img src="public/img/topics.png" >
+<img src="public/images/topics.png" >
 
 Users can also find questions sorted by category, we used JavaScript and a SQL query to set this up. 
 
