@@ -12,7 +12,7 @@
 # To get started:
 
 1. Clone this repo
-  * git clone https://github.com/philroberts13/youpick.git
+  * git clone https://github.com/AndrewPMurray/CookNook.git
 
 2. Install dependencies
   * npm install
