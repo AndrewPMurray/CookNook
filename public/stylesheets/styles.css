@@ -148,6 +148,7 @@ html {
   background-color: #F3F3F3;
   padding: 10px 10px;
   position: relative;
+  margin-left: -15%;
 }
 
 .question-form-container {
