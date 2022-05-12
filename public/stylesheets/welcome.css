@@ -95,6 +95,7 @@
   justify-content: center;
   width: auto;
   color: rgba(184, 38, 37);
+
 }
 
 #buttons {
@@ -221,4 +222,11 @@ justify-content: flex-end;
 
 .space {
   margin: 5px;
+}
+
+.links {
+  height: 1vh;
+  width: auto;
+  color: rgba(184, 38, 37);
+
 }

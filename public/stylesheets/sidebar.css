@@ -185,3 +185,36 @@
     border-radius: 25%;
     margin-left: 0.25vw;
 }
+
+
+#developer-sidebar-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    height: 0px;
+    min-width: 150px;
+    position: fixed;
+    top: 100px;
+    left: 80%;
+    border: #DDDDDD solid 1px;
+    padding-left: 10px;
+}
+
+.links {
+    /* height: 1vh; */
+    width: auto;
+    color: rgba(184, 38, 37);
+
+  }
+
+  #developer-display {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    /* width: 300px; */
+    /* height: 200px; */
+    border: solid #DDDDDD 0.5px;
+    background-color: rgba(255, 255, 255, 0.25);
+    gap: 0.25vw;
+}
